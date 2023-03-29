@@ -34,7 +34,10 @@
     "IDEVersion": "2023.2.1.75",
   },
   "resources": [
+    {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
+    {"id":{"name":"obj_studentCrawling","path":"objects/obj_studentCrawling/obj_studentCrawling.yy",},},
     {"id":{"name":"obj_studentInDesk","path":"objects/obj_studentInDesk/obj_studentInDesk.yy",},},
+    {"id":{"name":"obj_simpleStudent","path":"objects/obj_simpleStudent/obj_simpleStudent.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [
