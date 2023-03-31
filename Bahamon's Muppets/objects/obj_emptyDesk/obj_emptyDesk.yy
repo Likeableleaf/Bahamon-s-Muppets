@@ -1,10 +1,9 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_studentCrawling",
+  "name": "obj_emptyDesk",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -29,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_teacherPrototype",
-    "path": "sprites/spr_teacherPrototype/spr_teacherPrototype.yy",
+    "name": "spr_studentPrototype",
+    "path": "sprites/spr_studentPrototype/spr_studentPrototype.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -42,6 +42,7 @@
     {"id":{"name":"obj_studentInDesk","path":"objects/obj_studentInDesk/obj_studentInDesk.yy",},},
     {"id":{"name":"obj_simpleStudent","path":"objects/obj_simpleStudent/obj_simpleStudent.yy",},},
     {"id":{"name":"obj_teacher","path":"objects/obj_teacher/obj_teacher.yy",},},
+    {"id":{"name":"obj_emptyDesk","path":"objects/obj_emptyDesk/obj_emptyDesk.yy",},},
     {"id":{"name":"spr_teacherPrototype","path":"sprites/spr_teacherPrototype/spr_teacherPrototype.yy",},},
     {"id":{"name":"spr_throwables","path":"sprites/spr_throwables/spr_throwables.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},

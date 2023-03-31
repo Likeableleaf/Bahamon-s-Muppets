@@ -5,6 +5,10 @@ image_angle = point_direction(x, y, obj_studentInDesk.x, obj_studentInDesk.y) + 
 if (canKick == true) {
 	// Set sprite to kick
 	image_index = 1
+	// Generate direction towards other students
+	newdirection = point_direction(x, y, obj_studentInDesk.x, obj_studentInDesk.y) //+ irandom_range(-20,20)
+	// Set direction to the generated direction
+	direction = newdirection
 	// Set speed
 	speed = -4
 	// Set canKick to false
@@ -18,6 +22,11 @@ if (canKick == true) {
 	}
 	// Set sprite to regular
 	image_index = 0
+}
+
+// Check if in range 
+if (point_distance(x, y, other.x, other.y) < 50) {
+	direction = point_direction(x,y,other.x, other.y)
 }
 
 // ALL CODE BELOW IS FOR CLAMPING BORDERS
