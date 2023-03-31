@@ -29,7 +29,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_studentPrototype",
+    "path": "sprites/spr_studentPrototype/spr_studentPrototype.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }
