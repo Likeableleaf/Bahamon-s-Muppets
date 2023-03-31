@@ -21,6 +21,7 @@
     {"name":"obj_throwable","order":5,"path":"objects/obj_throwable/obj_throwable.yy",},
     {"name":"obj_controller","order":3,"path":"objects/obj_controller/obj_controller.yy",},
     {"name":"obj_studentCrawling","order":2,"path":"objects/obj_studentCrawling/obj_studentCrawling.yy",},
+    {"name":"obj_kick","order":6,"path":"objects/obj_kick/obj_kick.yy",},
     {"name":"obj_simpleStudent","order":1,"path":"objects/obj_simpleStudent/obj_simpleStudent.yy",},
     {"name":"obj_teacher","order":4,"path":"objects/obj_teacher/obj_teacher.yy",},
     {"name":"spr_throwables","order":2,"path":"sprites/spr_throwables/spr_throwables.yy",},
