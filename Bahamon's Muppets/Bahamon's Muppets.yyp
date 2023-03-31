@@ -34,10 +34,15 @@
     "IDEVersion": "2023.2.1.75",
   },
   "resources": [
+    {"id":{"name":"spr_studentPrototype","path":"sprites/spr_studentPrototype/spr_studentPrototype.yy",},},
+    {"id":{"name":"obj_throwable","path":"objects/obj_throwable/obj_throwable.yy",},},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
     {"id":{"name":"obj_studentCrawling","path":"objects/obj_studentCrawling/obj_studentCrawling.yy",},},
     {"id":{"name":"obj_studentInDesk","path":"objects/obj_studentInDesk/obj_studentInDesk.yy",},},
     {"id":{"name":"obj_simpleStudent","path":"objects/obj_simpleStudent/obj_simpleStudent.yy",},},
+    {"id":{"name":"obj_teacher","path":"objects/obj_teacher/obj_teacher.yy",},},
+    {"id":{"name":"spr_teacherPrototype","path":"sprites/spr_teacherPrototype/spr_teacherPrototype.yy",},},
+    {"id":{"name":"spr_throwables","path":"sprites/spr_throwables/spr_throwables.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [
