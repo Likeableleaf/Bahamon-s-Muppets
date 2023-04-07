@@ -1,9 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
-draw_set_font(CountdownFont)
-// Set color
-draw_set_color(c_white)
-if(showTime <= 7) {
-	// Draw countdown timer
-	draw_text(x+20, y+20, string(showTime))
-}
+if seconds < 10 {
+    draw_text(8, 88, string(seconds));
+} 
+//else if minutes < 10 {
+  //  draw_text(8, 88, "0" + string(minutes) + " : " + string(seconds));
+//} else if seconds < 10 {
+//    draw_text(8, 88, string(minutes) + " : 0" + string(seconds));
+//} else {
+//    draw_text(8, 88, string(minutes) + " : " + string(seconds));
+//}

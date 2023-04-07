@@ -3,12 +3,10 @@
 // Check if there is still time
 if(time > 0) {
 	// Decrease time
-	time = time - delta_time/1000000
+	seconds -= 1/room_speed
 } else { 
 	// Set time to 0
-	time=0
-	// Set showTime = to an integer of time
-	showTime = ceil(time)
+	seconds=0
 	// Set greenlight to false
 	obj_teacher.greenlight = false
 }
