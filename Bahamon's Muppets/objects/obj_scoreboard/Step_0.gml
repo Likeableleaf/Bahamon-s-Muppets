@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 // Check if there is still time
-if(time > 0) {
+if(seconds > 0) {
 	// Decrease time
 	seconds -= 1/room_speed
 } else { 
