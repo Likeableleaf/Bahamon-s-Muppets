@@ -4,3 +4,5 @@
 //instance_create_layer(obj_studentInDesk.x, obj_studentInDesk.y,"Instances",obj_emptyDesk)
 // Destroy the student
 instance_destroy(obj_studentInDesk)
+// Destroy throwable
+instance_destroy(obj_throwable)
