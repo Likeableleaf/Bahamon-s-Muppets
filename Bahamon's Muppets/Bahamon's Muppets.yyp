@@ -37,6 +37,7 @@
     {"id":{"name":"spr_studentPrototype","path":"sprites/spr_studentPrototype/spr_studentPrototype.yy",},},
     {"id":{"name":"obj_throwable","path":"objects/obj_throwable/obj_throwable.yy",},},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
+    {"id":{"name":"CountdownFont","path":"fonts/CountdownFont/CountdownFont.yy",},},
     {"id":{"name":"obj_studentCrawling","path":"objects/obj_studentCrawling/obj_studentCrawling.yy",},},
     {"id":{"name":"obj_kick","path":"objects/obj_kick/obj_kick.yy",},},
     {"id":{"name":"obj_studentInDesk","path":"objects/obj_studentInDesk/obj_studentInDesk.yy",},},

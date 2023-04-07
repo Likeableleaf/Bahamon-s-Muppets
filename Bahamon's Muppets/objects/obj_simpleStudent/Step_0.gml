@@ -24,6 +24,11 @@ if (canKick == true) {
 	image_index = 0
 }
 
+// Check for if canGrab is true
+if (canGrab == true) {
+	
+}
+
 // Check if in range 
 if (point_distance(x, y, other.x, other.y) < 50) {
 	direction = point_direction(x,y,other.x, other.y)
