@@ -24,20 +24,4 @@ while (greenlight == false) {
 		obj_throwable.direction = point_direction(x, y, obj_studentCrawling.x, obj_studentCrawling.y)
 	} 
 }
-// Check if there is still time
-if(time > 0) {
-	// Decrease time
-	time = time - delta_time/1000000
-} else { 
-	// Set time to 0
-	time=0
-	// Set showTime = to an integer of time
-	showTime = ceil(time)
-	// Set greenlight to false
-	greenlight = false
-}
-// Check if greenlight is false
-if(greenlight = false) {
-	// Timer for redlight duration alarm
-	alarm[0] = 30
-}
+

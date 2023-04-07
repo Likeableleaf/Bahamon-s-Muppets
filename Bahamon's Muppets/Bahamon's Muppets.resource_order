@@ -17,6 +17,7 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"obj_scoreboard","order":8,"path":"objects/obj_scoreboard/obj_scoreboard.yy",},
     {"name":"spr_studentPrototype","order":1,"path":"sprites/spr_studentPrototype/spr_studentPrototype.yy",},
     {"name":"obj_throwable","order":5,"path":"objects/obj_throwable/obj_throwable.yy",},
     {"name":"obj_controller","order":3,"path":"objects/obj_controller/obj_controller.yy",},

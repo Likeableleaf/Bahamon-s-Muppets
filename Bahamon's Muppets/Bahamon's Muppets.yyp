@@ -34,6 +34,7 @@
     "IDEVersion": "2023.2.1.75",
   },
   "resources": [
+    {"id":{"name":"obj_scoreboard","path":"objects/obj_scoreboard/obj_scoreboard.yy",},},
     {"id":{"name":"spr_studentPrototype","path":"sprites/spr_studentPrototype/spr_studentPrototype.yy",},},
     {"id":{"name":"obj_throwable","path":"objects/obj_throwable/obj_throwable.yy",},},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},

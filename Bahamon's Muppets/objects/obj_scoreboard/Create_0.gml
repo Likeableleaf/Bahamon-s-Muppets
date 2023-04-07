@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-// Set timer to random number
+// Variable for countdown
 time = irandom_range(60,300)
-// Set greenlight back to true
-greenlight = true
-
+// Variable to show time
+showTime = time
