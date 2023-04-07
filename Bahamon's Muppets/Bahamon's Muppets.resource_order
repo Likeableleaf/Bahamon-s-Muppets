@@ -25,6 +25,7 @@
     {"name":"obj_kick","order":6,"path":"objects/obj_kick/obj_kick.yy",},
     {"name":"obj_simpleStudent","order":1,"path":"objects/obj_simpleStudent/obj_simpleStudent.yy",},
     {"name":"obj_teacher","order":4,"path":"objects/obj_teacher/obj_teacher.yy",},
+    {"name":"obj_AICrawling","order":9,"path":"objects/obj_AICrawling/obj_AICrawling.yy",},
     {"name":"obj_emptyDesk","order":7,"path":"objects/obj_emptyDesk/obj_emptyDesk.yy",},
     {"name":"spr_throwables","order":2,"path":"sprites/spr_throwables/spr_throwables.yy",},
   ],
