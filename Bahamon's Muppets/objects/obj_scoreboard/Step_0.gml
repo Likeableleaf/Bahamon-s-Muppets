@@ -19,3 +19,4 @@ if(obj_teacher.greenlight = false && seconds = 0) {
 	// Timer for redlight duration alarm
 	seconds = 10;
 }
+
