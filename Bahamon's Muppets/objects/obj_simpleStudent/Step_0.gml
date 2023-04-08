@@ -11,9 +11,9 @@ if (canKick == true && (instance_exists(obj_studentInDesk))) {
 	if (distance_to_object(instance_nearest(x,y,obj_studentInDesk)) <= 30) {
 	//points to kick player
 	direction = point_direction(x, y, px, py) + 180	
-	image_angle = point_direction(x, y, obj_studentInDesk.x, obj_studentInDesk.y) + -90;
+	image_angle = point_direction(x, y, px, py) + -90;
 	} else {
-	image_angle = point_direction(x, y, obj_studentInDesk.x, obj_studentInDesk.y) + -270;
+	image_angle = point_direction(x, y, px, py) + -270;
 	direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
 	// Set direction to the generated direction
 	}
