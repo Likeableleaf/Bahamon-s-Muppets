@@ -7,11 +7,15 @@ if(seconds > 0) {
 } else { 
 	// Set time to 0
 	seconds=0
-	// Set greenlight to false
-	obj_teacher.greenlight = false
+	// Set greenlight to false or true
+	if obj_teacher.greenlight == false{
+		obj_teacher.greenlight = true;
+	}	else if obj_teacher.greenlight == true {
+		obj_teacher.greenlight = false;
+	}
 }
 // Check if greenlight is false
-if(obj_teacher.greenlight = false) {
+if(obj_teacher.greenlight = false && seconds = 0) {
 	// Timer for redlight duration alarm
-	alarm[0] = 30
+	seconds = 10;
 }
