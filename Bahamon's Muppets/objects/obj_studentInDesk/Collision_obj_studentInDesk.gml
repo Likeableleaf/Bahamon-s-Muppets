@@ -8,4 +8,4 @@ if (image_index == 1 &&
 	instance_destroy(obj_studentInDesk)
 	// Create crawling student AI if kicked out desk
 	instance_create_layer(x, y, "Instances", obj_studentCrawling)
-}
+}*/

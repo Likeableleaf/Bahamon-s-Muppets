@@ -2,7 +2,6 @@
 // You can write your code in this editor
 
 // check if kicking
-// check if kicking
 if (image_index == 1 && 
 	(direction <= point_direction(x, y, instance_nearest(x,y,obj_studentInDesk).x, instance_nearest(x,y,obj_studentInDesk).y) + 35 || 
 	direction >= point_direction(x, y, instance_nearest(x,y,obj_studentInDesk).x, instance_nearest(x,y,obj_studentInDesk).y) - 35)) {
