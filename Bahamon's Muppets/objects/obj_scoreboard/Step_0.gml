@@ -13,9 +13,11 @@ if(seconds > 0) {
 	}	else if obj_teacher.greenlight == true {
 		obj_teacher.greenlight = false;
 	}
-}
-// Check if greenlight is false
-if(obj_teacher.greenlight = false && seconds = 0) {
+	// timer reset
+	if(obj_teacher.greenlight = false) {
 	// Timer for redlight duration alarm
 	seconds = 10;
+	} else {
+	seconds = irandom_range(60,300)
+	}
 }
