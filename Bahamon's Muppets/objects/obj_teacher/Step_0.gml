@@ -2,6 +2,8 @@
 // You can write your code in this editor
 // Check to see if greenlight is false
 while (greenlight == false) {
+	// facing class
+	image_angle = 180;
 	// Check if AI is moving
 	if(instance_exists(obj_simpleStudent)){
 		// Check if simple AI is moving
@@ -33,4 +35,6 @@ while (greenlight == false) {
 		} 
 	}
 }
+
+if greenlight then image_angle=0;
 
