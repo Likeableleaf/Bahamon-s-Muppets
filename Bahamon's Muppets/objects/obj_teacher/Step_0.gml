@@ -34,6 +34,13 @@ if (greenlight == false) and (not instance_exists(obj_throwable)) {
 			obj_throwable.direction = point_direction(x, y, obj_studentCrawling.x, obj_studentCrawling.y)
 		//} 
 	}
+	// Check if AIcrawling exists
+	if(instance_exists(obj_AICrawling)){
+			// create throwable
+			instance_create_layer(x, y, "Instances", obj_throwable)
+			// Set direction of throwables
+			obj_throwable.direction = point_direction(x, y, obj_AICrawling.x, obj_AICrawling.y)
+	}
 }
 
 if greenlight then image_angle=0;

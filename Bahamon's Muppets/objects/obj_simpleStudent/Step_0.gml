@@ -1,18 +1,22 @@
 /// @description Insert description here
-// Have AI image track player
-image_angle = point_direction(x, y, obj_studentInDesk.x, obj_studentInDesk.y) + -270;
 
-if (canKick == true) {
+if (canKick == true && (instance_exists(obj_studentInDesk))) {
 	// Set sprite to kick
 	image_index = 1
 	// Generate direction towards other students
 	var px, py
 	px = instance_nearest(x,y,obj_studentInDesk).x;
 	py = instance_nearest(x,y,obj_studentInDesk).y;
-	
+	// checks if player is in range
+	if (distance_to_object(instance_nearest(x,y,obj_studentInDesk)) <= 30) {
+	//points to kick player
+	direction = point_direction(x, y, px, py) + 180	
+	image_angle = point_direction(x, y, obj_studentInDesk.x, obj_studentInDesk.y) + -90;
+	} else {
+	image_angle = point_direction(x, y, obj_studentInDesk.x, obj_studentInDesk.y) + -270;
 	direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
 	// Set direction to the generated direction
-	
+	}
 	// Set speed
 	speed += 4
 	// Set canKick to false
