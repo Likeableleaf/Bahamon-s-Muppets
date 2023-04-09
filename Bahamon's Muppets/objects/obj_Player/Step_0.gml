@@ -24,6 +24,7 @@ if ((h_point != 0) || (v_point != 0))
     var pdir = point_direction(0, 0, h_point, v_point);
     var dif = angle_difference(pdir, image_angle);
     image_angle += median(-20, dif, 20);
+	direction += median(-20, dif, 20);
     }
 
 // Check if 'A' button pressed
