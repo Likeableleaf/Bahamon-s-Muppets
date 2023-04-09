@@ -1,5 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-// List to handle controllers index
-player = noone
+//creating the desk and student object.
+image_index = 0
