@@ -19,6 +19,8 @@ if (keyboard_check_pressed(vk_space)) {
 	// Set sprite to regular
 	image_index = 0
 }
+//decrement the buffer over time
+if (buffer_time > 0) then buffer_time -= 1/room_speed;
 
 // ALL CODE BELOW IS FOR CLAMPING BORDERS
 x = clamp(x, sprite_width/2, room_width-sprite_width/2)
