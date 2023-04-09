@@ -1,5 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-// List to handle controllers index
-player = noone
+for (var i = 0; i < 12; i++;) {
+	player[i] = noone;	
+}
