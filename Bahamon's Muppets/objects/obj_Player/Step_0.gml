@@ -42,3 +42,11 @@ if gamepad_button_check_pressed(pad_num, gp_face1)
 	// Set sprite to regular
 	image_index = 0
 }
+
+//swap between in desk and crawling
+if inDesk {
+	object_set_sprite(object_index, spr_studentPrototype);
+} else {
+	object_set_sprite(object_index,spr_teacherPrototype);
+//nstance_create_layer(x+30,y+10,"Instances", obj_emptyDesk)
+}

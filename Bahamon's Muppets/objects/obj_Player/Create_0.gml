@@ -3,3 +3,4 @@
 //creating the desk and student object.
 image_index = 0
 direction = 90
+inDesk = true;
