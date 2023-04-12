@@ -14,11 +14,11 @@
     //y += v_move * 4;
    // }
 	
-// Variable to hold right stick horizontal rotation
-var h_point = gamepad_axis_value(pad_num, gp_axisrh);
-// Variable to hold right stick vertical rotation
-var v_point = gamepad_axis_value(pad_num, gp_axisrv);
-// Check if right stick is moving
+// Variable to hold left stick horizontal rotation
+var h_point = gamepad_axis_value(pad_num, gp_axislv);
+// Variable to hold left stick vertical rotation
+var v_point = -gamepad_axis_value(pad_num, gp_axislh);
+// Check if left stick is moving
 if ((h_point != 0) || (v_point != 0))
     {
     var pdir = point_direction(0, 0, h_point, v_point);
@@ -45,8 +45,19 @@ if gamepad_button_check_pressed(pad_num, gp_face1)
 
 //swap between in desk and crawling
 if inDesk {
-	object_set_sprite(object_index, spr_studentPrototype);
+	object_set_sprite(obj_Player.object_index, spr_studentPrototype);
+} else if (!inDesk && buffer_time == 0)  {
+	buffer_time = 1;
+	object_set_sprite(obj_Player.object_index,spr_teacherPrototype);
 } else {
-	object_set_sprite(object_index,spr_teacherPrototype);
-//nstance_create_layer(x+30,y+10,"Instances", obj_emptyDesk)
+	object_set_sprite(obj_Player.object_index,spr_teacherPrototype);
+//instance_create_layer(x+30,y+10,"Instances", obj_emptyDesk)
 }
+
+
+//decrement the buffer over time
+if (buffer_time > 0) then buffer_time -= 1/room_speed;
+
+// ALL CODE BELOW IS FOR CLAMPING BORDERS
+x = clamp(x, sprite_width/2, room_width-sprite_width/2)
+y = clamp(y, sprite_height/2, room_height-sprite_height/2)
