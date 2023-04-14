@@ -45,12 +45,12 @@ if gamepad_button_check_pressed(pad_num, gp_face1)
 
 //swap between in desk and crawling
 if inDesk {
-	object_set_sprite(obj_Player.object_index, spr_studentPrototype);
+	sprite_index = spr_studentPrototype;
 } else if (!inDesk && buffer_time == 0)  {
 	buffer_time = 1;
-	object_set_sprite(obj_Player.object_index,spr_teacherPrototype);
+	sprite_index = spr_teacherPrototype;
 } else {
-	object_set_sprite(obj_Player.object_index,spr_teacherPrototype);
+	sprite_index = spr_teacherPrototype;
 //instance_create_layer(x+30,y+10,"Instances", obj_emptyDesk)
 }
 
