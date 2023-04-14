@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "unnecessarys",
+    "path": "folders/Objects/unnecessarys.yy",
   },
   "parentObjectId": null,
   "persistent": false,
