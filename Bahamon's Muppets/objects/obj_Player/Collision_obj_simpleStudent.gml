@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 // check if kicking
-if (image_index == 1 && 
+if (image_index == 1 && inDesk &&
 	(direction <= point_direction(x, y, instance_nearest(x,y,obj_simpleStudent).x, instance_nearest(x,y,obj_simpleStudent).y) + 35 || 
 	direction >= point_direction(x, y, instance_nearest(x,y,obj_simpleStudent).x, instance_nearest(x,y,obj_simpleStudent).y) - 35)) {
 	// Destroy simple student 
