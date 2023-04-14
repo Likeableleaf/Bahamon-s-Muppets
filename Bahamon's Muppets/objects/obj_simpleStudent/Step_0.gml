@@ -1,5 +1,8 @@
 /// @description Insert description here
 
+
+
+if(inDesk){
 if (canKick == true && (instance_exists(obj_studentInDesk))) {
 	// Set sprite to kick
 	image_index = 1
@@ -31,6 +34,49 @@ if (canKick == true && (instance_exists(obj_studentInDesk))) {
 	// Set sprite to regular
 	image_index = 0
 }
+
+//if the AI is out of the desk then...
+}else{
+	/// @description Insert description here
+// You can write your code in this editor
+var dx, dy
+dx = instance_nearest(x,y,obj_emptyDesk).x;
+dy = instance_nearest(x,y,obj_emptyDesk).y;
+direction = point_direction(x, y, dx, dy)
+// Set the rotation of student to match mouse
+image_angle = point_direction(x, y, dx, dy) + -90
+// Check if space bar is pressed
+if (instance_exists(obj_emptyDesk)) {
+	// Set sprite to kick
+	image_index = 1
+	// Set speed
+	speed = 1
+} else {
+	if(speed != 0) {
+	// Slow down student
+	speed -= 0.2
+	}
+	// Set sprite to regular
+	image_index = 0
+}
+
+}
+
+
+
+//swap between in desk and crawling
+if inDesk {
+	sprite_index = spr_studentPrototype;
+} else if (!inDesk && buffer_time == 0)  {
+	buffer_time = 1;
+	sprite_index = spr_teacherPrototype;
+} else {
+	sprite_index = spr_teacherPrototype;
+//instance_create_layer(x+30,y+10,"Instances", obj_emptyDesk)
+}
+
+//decrement the buffer over time
+if (buffer_time > 0) then buffer_time -= 1/room_speed;
 
 // Check for if canGrab is true
 if (canGrab == true) {
