@@ -33,12 +33,19 @@ if gamepad_button_check_pressed(pad_num, gp_face1)
 	// Set sprite to kick
 	image_index = 1
 	// Set speed
+	if(inDesk){
 	speed = -4
+	}else{
+	speed = 4;
+	}
 } else {
 	if(speed != 0) {
 	// Slow down student
+	if(inDesk){
 	speed += 0.2
-	}
+	}else{
+	speed -= 0.2;
+	}}
 	// Set sprite to regular
 	image_index = 0
 }
