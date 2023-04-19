@@ -38,6 +38,7 @@
     {"name":"obj_PlayerCrawling","order":1,"path":"objects/obj_PlayerCrawling/obj_PlayerCrawling.yy",},
     {"name":"obj_simpleStudent","order":1,"path":"objects/obj_simpleStudent/obj_simpleStudent.yy",},
     {"name":"obj_teacher","order":4,"path":"objects/obj_teacher/obj_teacher.yy",},
+    {"name":"obj_button","order":7,"path":"objects/obj_button/obj_button.yy",},
     {"name":"scr_on_click_credit","order":2,"path":"scripts/scr_on_click_credit/scr_on_click_credit.yy",},
     {"name":"obj_Player","order":10,"path":"objects/obj_Player/obj_Player.yy",},
     {"name":"obj_emptyDesk","order":7,"path":"objects/obj_emptyDesk/obj_emptyDesk.yy",},
