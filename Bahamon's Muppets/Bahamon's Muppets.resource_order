@@ -19,6 +19,7 @@
   ],
   "ResourceOrderSettings": [
     {"name":"obj_scoreboard","order":8,"path":"objects/obj_scoreboard/obj_scoreboard.yy",},
+    {"name":"obj_menu","order":13,"path":"objects/obj_menu/obj_menu.yy",},
     {"name":"spr_studentPrototype","order":1,"path":"sprites/spr_studentPrototype/spr_studentPrototype.yy",},
     {"name":"scr_on_click_endcredit","order":3,"path":"scripts/scr_on_click_endcredit/scr_on_click_endcredit.yy",},
     {"name":"spr_ProtoKick","order":3,"path":"sprites/spr_ProtoKick/spr_ProtoKick.yy",},

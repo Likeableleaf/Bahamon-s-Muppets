@@ -36,6 +36,7 @@
   },
   "resources": [
     {"id":{"name":"obj_scoreboard","path":"objects/obj_scoreboard/obj_scoreboard.yy",},},
+    {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},},
     {"id":{"name":"spr_studentPrototype","path":"sprites/spr_studentPrototype/spr_studentPrototype.yy",},},
     {"id":{"name":"scr_on_click_endcredit","path":"scripts/scr_on_click_endcredit/scr_on_click_endcredit.yy",},},
     {"id":{"name":"spr_ProtoKick","path":"sprites/spr_ProtoKick/spr_ProtoKick.yy",},},
