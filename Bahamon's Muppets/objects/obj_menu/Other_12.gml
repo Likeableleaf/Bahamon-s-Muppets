@@ -6,4 +6,4 @@ var _height = 100;
 //create the credits button
 
 //create the quit button
-buttonCreate(100, 300 + (_height + 40) * 2, _width, _height, "Restart", on_click_replay);
+scr_buttonCreate(100, 300 + (_height + 40) * 2, _width, _height, "Restart", scr_on_click_replay);

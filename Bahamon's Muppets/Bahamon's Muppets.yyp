@@ -45,6 +45,7 @@
     {"id":{"name":"scr_on_click_endcredit","path":"scripts/scr_on_click_endcredit/scr_on_click_endcredit.yy",},},
     {"id":{"name":"spr_ProtoKick","path":"sprites/spr_ProtoKick/spr_ProtoKick.yy",},},
     {"id":{"name":"scr_on_click_play","path":"scripts/scr_on_click_play/scr_on_click_play.yy",},},
+    {"id":{"name":"CountdownFont2","path":"fonts/CountdownFont2/CountdownFont2.yy",},},
     {"id":{"name":"scr_on_click_resume","path":"scripts/scr_on_click_resume/scr_on_click_resume.yy",},},
     {"id":{"name":"scr_buttonCreate","path":"scripts/scr_buttonCreate/scr_buttonCreate.yy",},},
     {"id":{"name":"obj_throwable","path":"objects/obj_throwable/obj_throwable.yy",},},
