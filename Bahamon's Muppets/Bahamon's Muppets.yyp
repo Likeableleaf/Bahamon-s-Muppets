@@ -38,6 +38,7 @@
   "resources": [
     {"id":{"name":"obj_scoreboard","path":"objects/obj_scoreboard/obj_scoreboard.yy",},},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},},
+    {"id":{"name":"obj_FinalScore","path":"objects/obj_FinalScore/obj_FinalScore.yy",},},
     {"id":{"name":"obj_credits","path":"objects/obj_credits/obj_credits.yy",},},
     {"id":{"name":"spr_studentPrototype","path":"sprites/spr_studentPrototype/spr_studentPrototype.yy",},},
     {"id":{"name":"obj_menuText","path":"objects/obj_menuText/obj_menuText.yy",},},
@@ -63,6 +64,7 @@
     {"id":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},},
     {"id":{"name":"obj_emptyDesk","path":"objects/obj_emptyDesk/obj_emptyDesk.yy",},},
     {"id":{"name":"spr_teacherPrototype","path":"sprites/spr_teacherPrototype/spr_teacherPrototype.yy",},},
+    {"id":{"name":"obj_creditsButton","path":"objects/obj_creditsButton/obj_creditsButton.yy",},},
     {"id":{"name":"spr_throwables","path":"sprites/spr_throwables/spr_throwables.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
