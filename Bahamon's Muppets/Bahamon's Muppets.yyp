@@ -16,6 +16,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Fonts","folderPath":"folders/Fonts.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Notes","folderPath":"folders/Notes.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Objects","folderPath":"folders/Objects.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"menuItems","folderPath":"folders/Objects/menuItems.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"unnecessarys","folderPath":"folders/Objects/unnecessarys.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Particle Systems","folderPath":"folders/Particle Systems.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Paths","folderPath":"folders/Paths.yy",},
@@ -27,7 +28,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sprites","folderPath":"folders/Sprites.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"menuItems","folderPath":"folders/Objects/menuItems.yy",},
   ],
   "IncludedFiles": [],
   "isEcma": false,
@@ -38,6 +38,7 @@
   "resources": [
     {"id":{"name":"obj_scoreboard","path":"objects/obj_scoreboard/obj_scoreboard.yy",},},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},},
+    {"id":{"name":"obj_credits","path":"objects/obj_credits/obj_credits.yy",},},
     {"id":{"name":"spr_studentPrototype","path":"sprites/spr_studentPrototype/spr_studentPrototype.yy",},},
     {"id":{"name":"obj_menuText","path":"objects/obj_menuText/obj_menuText.yy",},},
     {"id":{"name":"scr_on_click_endcredit","path":"scripts/scr_on_click_endcredit/scr_on_click_endcredit.yy",},},

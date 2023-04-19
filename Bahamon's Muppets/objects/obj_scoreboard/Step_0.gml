@@ -22,4 +22,9 @@ if(seconds > 0) {
 	}
 }
 
+if(global.started && !global.menustartclosed){
+global.menustartclosed = true;
+global.menuOpen = !global.menuOpen;
+}
+
 
