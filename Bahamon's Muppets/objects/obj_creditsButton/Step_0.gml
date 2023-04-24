@@ -8,7 +8,9 @@ if(keyboard_check_pressed(ord("M"))){
 }
 
 if(global.menuOpen){
-event_user(0);
+	if(global.creditsOpened){
+		event_user(0);
+	}
 }else{
 event_user(1);
 }

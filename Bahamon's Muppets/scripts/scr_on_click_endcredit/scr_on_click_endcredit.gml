@@ -3,5 +3,5 @@
 function scr_on_click_endcredit(){
 	instance_destroy(obj_credits);
 	//instance_destroy(global.creditsButtonId);
-	layer_destroy_instances("Credits");
+	layer_destroy("Credits");
 }
