@@ -8,9 +8,9 @@
 
 //an attempt to make the collision cause a calculation of the speed and make both empty desks move in opposite directions
 
-var calcId =instance_nearest(x,y,obj_emptyDesk).id
+//var calcId =instance_nearest(x,y,obj_emptyDesk).id
 
-if(calcId.id != id)
+if(other.id != id)
 {
 	
 	 speed = sqrt(other.hspeed^2 + other.vspeed^2); // calculate the speed of the other desk
@@ -28,12 +28,12 @@ if(calcId.id != id)
 		if(overlap>0){
 		    
 			// Apply the knockback force in the opposite direction of the collision
-			x += lengthdir_x(knockback, dir + 180);
-		 y += lengthdir_y(knockback, dir + 180);
+			other.x += lengthdir_x(knockback, dir + 180);
+		 other.y += lengthdir_y(knockback, dir + 180);
         
         // Move the other desk away in the direction of the collision
-		other.x += lengthdir_x(overlap, dir);
-        other.y += lengthdir_y(overlap, dir);
+		x += lengthdir_x(overlap, dir);
+        y += lengthdir_y(overlap, dir);
 	
 		}
 }
