@@ -33,6 +33,7 @@
     {"name":"spr_ProtoKick","order":3,"path":"sprites/spr_ProtoKick/spr_ProtoKick.yy",},
     {"name":"Desk_rolling1","order":1,"path":"sounds/Desk_rolling1/Desk_rolling1.yy",},
     {"name":"scr_on_click_play","order":4,"path":"scripts/scr_on_click_play/scr_on_click_play.yy",},
+    {"name":"Room2","order":1,"path":"rooms/Room2/Room2.yy",},
     {"name":"CountdownFont2","order":1,"path":"fonts/CountdownFont2/CountdownFont2.yy",},
     {"name":"scr_on_click_resume","order":7,"path":"scripts/scr_on_click_resume/scr_on_click_resume.yy",},
     {"name":"Background_carpet","order":5,"path":"sprites/Background_carpet/Background_carpet.yy",},

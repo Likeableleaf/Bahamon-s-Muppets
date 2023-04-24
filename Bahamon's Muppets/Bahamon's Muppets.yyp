@@ -53,6 +53,7 @@
     {"id":{"name":"spr_ProtoKick","path":"sprites/spr_ProtoKick/spr_ProtoKick.yy",},},
     {"id":{"name":"Desk_rolling1","path":"sounds/Desk_rolling1/Desk_rolling1.yy",},},
     {"id":{"name":"scr_on_click_play","path":"scripts/scr_on_click_play/scr_on_click_play.yy",},},
+    {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
     {"id":{"name":"CountdownFont2","path":"fonts/CountdownFont2/CountdownFont2.yy",},},
     {"id":{"name":"scr_on_click_resume","path":"scripts/scr_on_click_resume/scr_on_click_resume.yy",},},
     {"id":{"name":"scr_buttonCreate","path":"scripts/scr_buttonCreate/scr_buttonCreate.yy",},},
@@ -87,6 +88,7 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
