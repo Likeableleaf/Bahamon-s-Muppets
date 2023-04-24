@@ -13,6 +13,6 @@ if instance_nearest(x,y,obj_studentInDesk.inDesk == true){
 		//generate emptyDesk
 		instance_create_layer(x+30,y+10,"Instances", obj_emptyDesk)
 		// destroy kick
-		instance_destroy(obj_kick)
+		instance_destroy();
 	}
 }
