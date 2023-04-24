@@ -34,6 +34,8 @@ if gamepad_button_check_pressed(pad_num, gp_face1)
 	image_index = 1
 	// Set speed
 	if(inDesk){
+	instance_create_layer(x,y,"Instances",obj_kick)
+	obj_kick.owner = id
 	speed = -4
 	}else{
 	speed = 4;

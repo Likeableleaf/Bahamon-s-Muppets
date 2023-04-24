@@ -12,6 +12,8 @@
     {"name":"inst_6E493497","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_7DB1DD9F","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_4EF8BC0D","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_7DB1DD9F","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_4EF8BC0D","path":"rooms/Room1/Room1.yy",},
   ],
   "isDnd": false,
   "layers": [
