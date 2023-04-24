@@ -11,10 +11,8 @@ if (keyboard_check_pressed(vk_space)) {
 	// Set sprite to kick
 	image_index = 1
 	// Set speed
+	
 	if(inDesk){
-	// Create kick object
-	instance_create_layer(x,y,"Instances",obj_kick)
-	obj_kick.owner = id
 	speed = -4
 	}else{
 	speed = 4;
