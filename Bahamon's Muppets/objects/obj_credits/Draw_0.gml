@@ -3,7 +3,7 @@
 draw_set_halign(fa_top);
 draw_set_valign(fa_right);
 
-draw_set_font(CountdownFont2);
+//draw_set_font(CountdownFont2);
 
 draw_text_color(x, y, "Created By:", c_black,c_black,c_black,c_black,1);
 draw_text_color(x, y +20,"Producer - Zachery Ramirez", c_black,c_black,c_black,c_black,1);
