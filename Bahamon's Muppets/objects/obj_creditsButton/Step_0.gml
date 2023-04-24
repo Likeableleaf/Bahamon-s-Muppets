@@ -2,7 +2,9 @@
 // You can write your code in this editor
 if(keyboard_check_pressed(ord("M"))){
 	
-	room_goto_previous();
+	instance_destroy(obj_credits);
+	instance_destroy(global.creditsButtonId);
+	instance_destroy();
 }
 
 if(global.menuOpen){
