@@ -3,7 +3,7 @@ if (inDesk) {
 if (canKick == true && (instance_exists(obj_studentInDesk))) {
 	// Set sprite to kick
 	//image_index = 1
-	
+	solid = false
 	// Generate direction towards other students
 	var px, py
 	px = instance_nearest(x,y,obj_studentInDesk).x;

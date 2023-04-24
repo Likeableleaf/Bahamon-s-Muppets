@@ -1,2 +1,2 @@
 // Set speed of throwables upon creation
-speed = 2
+speed = 4
