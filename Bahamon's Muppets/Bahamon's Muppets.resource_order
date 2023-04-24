@@ -21,6 +21,7 @@
   "ResourceOrderSettings": [
     {"name":"obj_scoreboard","order":2,"path":"objects/obj_scoreboard/obj_scoreboard.yy",},
     {"name":"Kick_empty","order":10,"path":"sounds/Kick_empty/Kick_empty.yy",},
+    {"name":"podium_desk","order":6,"path":"sprites/podium_desk/podium_desk.yy",},
     {"name":"Empty_kick2","order":9,"path":"sounds/Empty_kick2/Empty_kick2.yy",},
     {"name":"Door_opening","order":3,"path":"sounds/Door_opening/Door_opening.yy",},
     {"name":"Thowing_object_nohit","order":7,"path":"sounds/Thowing_object_nohit/Thowing_object_nohit.yy",},
