@@ -6,3 +6,5 @@ direction = 0
 image_angle = -90
 buffer_time = 0;
 inDesk = false;
+
+replaceColor = (math.random_range(0,255), math.random_range(0,255), math.random_range(0,255));
