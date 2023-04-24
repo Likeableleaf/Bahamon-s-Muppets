@@ -36,6 +36,7 @@ if gamepad_button_check_pressed(pad_num, gp_face1)
 	if(inDesk){
 	instance_create_layer(x,y,"Instances",obj_kick)
 	obj_kick.owner = id
+	obj_kick.image_angle = image_angle
 	speed = -4
 	}else{
 	speed = 4;

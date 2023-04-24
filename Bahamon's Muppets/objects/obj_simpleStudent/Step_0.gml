@@ -2,7 +2,8 @@
 if (inDesk) {
 if (canKick == true && (instance_exists(obj_studentInDesk))) {
 	// Set sprite to kick
-	image_index = 1
+	//image_index = 1
+	
 	// Generate direction towards other students
 	var px, py
 	px = instance_nearest(x,y,obj_studentInDesk).x;
@@ -12,10 +13,16 @@ if (canKick == true && (instance_exists(obj_studentInDesk))) {
 	//points to kick player
 	direction = point_direction(x, y, px, py) + 180	
 	image_angle = point_direction(x, y, px, py) + -90;
+	instance_create_layer(x+lengthdir_x(32,image_angle),y+lengthdir_y(32,image_angle),"Instances",obj_kick);
+	obj_kick.owner = id
+	obj_kick.image_angle = image_angle
 	} else {
 	image_angle = point_direction(x, y, px, py) + -270;
 	direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
 	// Set direction to the generated direction
+	/*instance_create_layer(x+lengthdir_x(32,image_angle),y+lengthdir_y(32,image_angle),"Instances",obj_kick);
+	obj_kick.owner = id
+	obj_kick.image_angle = image_angle //*/
 	}
 	// Set speed
 	speed += 4
@@ -40,9 +47,12 @@ image_angle = point_direction(x, y, dx, dy) + -90
 // Check if space bar is pressed
 if (instance_exists(obj_emptyDesk)) {
 	// Set sprite to kick
-	image_index = 1
+	//image_index = 1
 	// Set speed
 	speed = 1
+	//instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick);
+	//obj_kick.owner = id
+	//obj_kick.image_angle = image_angle
 } else {
 	if(speed != 0) {
 	// Slow down student
