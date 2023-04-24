@@ -8,9 +8,12 @@
 //		 instance_create_layer(x+30,y+10,"Instances", obj_emptyDesk)
 	//	 instance_nearest(x,y,obj_studentInDesk).image_angle -= 180;
 //} 
-if(instance_nearest(x,y,obj_simpleStudent).inDesk == false) {
-	//obj_simpleStudent.solid = true
-	//speed = 0
-	x = xprevious
-	y = yprevious
-}
+//if(instance_nearest(x,y,obj_simpleStudent).inDesk == false) {
+//	//obj_simpleStudent.solid = true
+//	//speed = 0
+//	x = xprevious
+//	y = yprevious
+//} else if (instance_nearest(x,y,obj_simpleStudent).inDesk == true) {
+//	x = xprevious 
+//	y = yprevious
+//}

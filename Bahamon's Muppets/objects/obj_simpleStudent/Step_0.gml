@@ -13,19 +13,19 @@ if (canKick == true && (instance_exists(obj_studentInDesk))) {
 	//points to kick player
 	direction = point_direction(x, y, px, py) + 180	
 	image_angle = point_direction(x, y, px, py) + -90;
-	instance_create_layer(x+lengthdir_x(32,image_angle),y+lengthdir_y(32,image_angle),"Instances",obj_kick);
+	instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick);
 	obj_kick.owner = id
 	obj_kick.image_angle = image_angle
 	} else {
 	image_angle = point_direction(x, y, px, py) + -270;
 	direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
 	// Set direction to the generated direction
-	/*instance_create_layer(x+lengthdir_x(32,image_angle),y+lengthdir_y(32,image_angle),"Instances",obj_kick);
+	instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick);
 	obj_kick.owner = id
 	obj_kick.image_angle = image_angle //*/
 	}
 	// Set speed
-	speed += 4
+	speed = 4
 	// Set canKick to false
 	canKick = false
 	// Reset alarm
