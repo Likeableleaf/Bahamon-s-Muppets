@@ -5,4 +5,4 @@ image_index = 0
 direction = 0
 image_angle = -90
 buffer_time = 0;
-inDesk = true;
+inDesk = false;

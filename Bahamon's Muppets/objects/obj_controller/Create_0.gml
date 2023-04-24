@@ -3,14 +3,16 @@
 for (var i = 0; i < 12; i++;) {
 	player[i] = noone;	
 }
-playerCount = 1;
-playerCap = 9;
+// player count tracker
+global.playerCount = 1;
+// player cap set
+global.playerCap = 9;
+// set start locations
+startLoc = [800, 1000, 1200, 800, 1000, 1200, 800, 1000, 1200, 350, 350, 350, 500, 500, 500, 650, 650, 650];
+//generate mouse player
 instance_create_layer(800, 350, "Instances", obj_studentInDesk);
-instance_create_layer(1000, 350, "Instances", obj_emptyDesk);
-instance_create_layer(1200, 350, "Instances", obj_emptyDesk);
-instance_create_layer(800, 500, "Instances", obj_emptyDesk);
-instance_create_layer(1000, 500, "Instances", obj_emptyDesk);
-instance_create_layer(1200, 500, "Instances", obj_emptyDesk);
-instance_create_layer(800, 650, "Instances", obj_emptyDesk);
-instance_create_layer(1000, 650, "Instances", obj_emptyDesk);
-instance_create_layer(1200, 650, "Instances", obj_emptyDesk);
+
+//generate empty desks into start locations
+for (i = 1; i < global.playerCap; i++) {
+	instance_create_layer(startLoc[i], startLoc[i+9], "Instances", obj_emptyDesk);
+}
