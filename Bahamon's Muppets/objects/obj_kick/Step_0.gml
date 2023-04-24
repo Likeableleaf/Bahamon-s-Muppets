@@ -1,8 +1,17 @@
 /// @description Insert description here
 // You can write your code in this editor
+image_angle = owner.image_angle
 // Set x to owner x
-x = owner.x+ 5 + owner.lengthdir_x(owner.sprite_get_width( owner.sprite_index)/2,owner.image_angle)
-// Set y to owner y
-y = owner.y+ 30 + owner.lengthdir_y(owner.sprite_get_height(owner.sprite_index)/2,owner.image_angle)
-// Set image angle to owner image angle
-image_angle = owner.image_angle ;
+//if(image_angle >= 0) and (image_angle <= 90) {
+//	x = owner.x + lengthdir_x(80, owner.image_angle);
+//	y = owner.y + lengthdir_y(-40, owner.image_angle);
+//} else if (image_angle >= 90) and (image_angle <= 180) {
+//	x = owner.x + lengthdir_x(10, owner.image_angle);
+//	y = owner.y + lengthdir_y(-100, owner.image_angle);
+//} else if (image_angle >= 180) and (image_angle <= 270) {
+//	x = owner.x + lengthdir_x(-80, owner.image_angle);
+//	y = owner.y + lengthdir_y(40, owner.image_angle);
+//} else if (image_angle >= 270) and (image_angle <= 360) {
+//	x = owner.x + lengthdir_x(80, owner.image_angle);
+//	y = owner.y + lengthdir_y(40, owner.image_angle);
+//} 
