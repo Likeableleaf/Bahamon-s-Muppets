@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-image_angle = owner.image_angle
+//image_angle = owner.image_angle
+buffer_time -= 1/room_speed
 // Set x to owner x
 //if(image_angle >= 0) and (image_angle <= 90) {
 //	x = owner.x + lengthdir_x(80, owner.image_angle);
