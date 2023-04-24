@@ -3,7 +3,7 @@
 if(keyboard_check_pressed(ord("M"))){
 	
 	instance_destroy(obj_credits);
-	instance_destroy(global.creditsButtonId);
+	layer_destroy("Credits");
 	instance_destroy();
 }
 

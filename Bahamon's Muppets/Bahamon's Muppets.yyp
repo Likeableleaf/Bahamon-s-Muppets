@@ -61,6 +61,7 @@
     {"id":{"name":"obj_simpleStudent","path":"objects/obj_simpleStudent/obj_simpleStudent.yy",},},
     {"id":{"name":"obj_teacher","path":"objects/obj_teacher/obj_teacher.yy",},},
     {"id":{"name":"obj_AICrawling","path":"objects/obj_AICrawling/obj_AICrawling.yy",},},
+    {"id":{"name":"scr_buttonCreateCredits","path":"scripts/scr_buttonCreateCredits/scr_buttonCreateCredits.yy",},},
     {"id":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},},
     {"id":{"name":"scr_on_click_credit","path":"scripts/scr_on_click_credit/scr_on_click_credit.yy",},},
     {"id":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},},
