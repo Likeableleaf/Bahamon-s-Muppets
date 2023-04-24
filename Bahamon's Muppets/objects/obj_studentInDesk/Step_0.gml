@@ -51,7 +51,7 @@ if (keyboard_check_pressed(vk_space)) {
 
 //swap between in desk and crawling
 if inDesk {
-	sprite_index = spr_studentPrototype;
+	sprite_index = spr_studentInDeskV1;
 } else if (!inDesk && buffer_time == 0)  {
 	buffer_time = 1;
 	sprite_index = spr_teacherPrototype;

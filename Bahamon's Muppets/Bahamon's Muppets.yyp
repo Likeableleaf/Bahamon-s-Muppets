@@ -57,6 +57,7 @@
     {"id":{"name":"CountdownFont2","path":"fonts/CountdownFont2/CountdownFont2.yy",},},
     {"id":{"name":"scr_on_click_resume","path":"scripts/scr_on_click_resume/scr_on_click_resume.yy",},},
     {"id":{"name":"scr_buttonCreate","path":"scripts/scr_buttonCreate/scr_buttonCreate.yy",},},
+    {"id":{"name":"obj_mileStones","path":"objects/obj_mileStones/obj_mileStones.yy",},},
     {"id":{"name":"Background_carpet","path":"sprites/Background_carpet/Background_carpet.yy",},},
     {"id":{"name":"obj_throwable","path":"objects/obj_throwable/obj_throwable.yy",},},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},

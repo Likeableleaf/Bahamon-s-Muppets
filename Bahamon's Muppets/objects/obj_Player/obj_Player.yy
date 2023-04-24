@@ -35,8 +35,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_studentPrototype",
-    "path": "sprites/spr_studentPrototype/spr_studentPrototype.yy",
+    "name": "spr_studentInDeskV1",
+    "path": "sprites/spr_studentInDeskV1/spr_studentInDeskV1.yy",
   },
   "spriteMaskId": null,
   "visible": true,
