@@ -76,7 +76,9 @@ if (inDesk) {
 	if(obj_teacher.greenlight == true) {
 		// Generate direction towards other students
 		var px, py
-		for (var i = 0; i < maxVal; ++i;)
+		px = instance_nearest(x,y,obj_simpleStudent).x
+		py = instance_nearest(x,y,obj_simpleStudent).y
+		/*for (var i = 0; i < maxVal; ++i;)
 		{
 			if(instance_exists(ais[i])){
 				if(instance_nearest(x,y,obj_simpleStudent).id == ais[i]) {
@@ -85,15 +87,15 @@ if (inDesk) {
 				}
 			}
 		}
-	}
+	
 		ai = chosenID.object_index
 		px = ai.x		
-		py = ai.y
+		py = ai.y*/
 		//}
 		//px = instance_nearest(x,y,obj_simpleStudent).x;
 		//py = instance_nearest(x,y,obj_simpleStudent).y;
 		// checks if player is in range
-		if (distance_to_object(ai) <= 5) {
+		if (distance_to_object(instance_nearest(x,y,obj_simpleStudent)) <= 5) {
 			//points to kick player
 			direction = point_direction(x, y, px, py) + 180	
 			image_angle = point_direction(x, y, px, py) + -90;
@@ -114,6 +116,7 @@ if (inDesk) {
 		canKick = false
 		// Reset alarm
 		alarm[1] = 60
+		}
 	} else if (canKick == true && (not instance_exists(obj_studentInDesk)) and instance_exists(obj_Player)) {
 	// Set sprite to kick
 	//image_index = 1
