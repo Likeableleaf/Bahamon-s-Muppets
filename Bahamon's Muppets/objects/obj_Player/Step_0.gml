@@ -72,3 +72,5 @@ if (buffer_time > 0) then buffer_time -= 1/room_speed;
 // ALL CODE BELOW IS FOR CLAMPING BORDERS
 x = clamp(x, sprite_width/2, room_width-sprite_width/2)
 y = clamp(y, sprite_height/2, room_height-sprite_height/2)
+
+obj_mileStones.owner = id;
