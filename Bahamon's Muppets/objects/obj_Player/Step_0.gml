@@ -27,6 +27,8 @@ if ((h_point != 0) || (v_point != 0))
 	direction += median(-20, dif, 20);
     }
 
+
+if(global.menuOpen == false) {
 // Check if 'A' button pressed
 if gamepad_button_check_pressed(pad_num, gp_face1)
     {
@@ -53,15 +55,15 @@ if gamepad_button_check_pressed(pad_num, gp_face1)
 	// Set sprite to regular
 	image_index = 0
 }
-
+}
 //swap between in desk and crawling
 if inDesk {
 	sprite_index = spr_studentInDeskV1;
 } else if (!inDesk && buffer_time == 0)  {
 	buffer_time = 1;
-	sprite_index = spr_teacherPrototype;
+	sprite_index = spr_studentCrawl;
 } else {
-	sprite_index = spr_teacherPrototype;
+	sprite_index = spr_studentCrawl;
 //instance_create_layer(x+30,y+10,"Instances", obj_emptyDesk)
 }
 

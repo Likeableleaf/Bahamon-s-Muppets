@@ -152,7 +152,7 @@ if (inDesk) {
 }
 
 if(instance_nearest(x,y,obj_simpleStudent).inDesk == false) {
-		
+		instance_nearest(x,y,obj_simpleStudent).imageColor = imageColor
 		//kill the ai simple student if teacher is in redlight and ai is out of desk
 		if(obj_teacher.greenlight == false){
 		instance_destroy(instance_nearest(x,y,obj_simpleStudent));
@@ -227,9 +227,12 @@ if inDesk {
 	sprite_index = spr_studentInDeskV1;
 } else if (!inDesk && buffer_time == 0)  {
 	buffer_time = 1;
-	sprite_index = spr_teacherPrototype;
+	sprite_index = spr_studentCrawl;
+	//spr_teacherPrototype.image_blend = imageColor
+	//spr_teacherPrototype.image_blend = make_colour_hsv(colour_get_value(imageColor), colour_get_value(imageColor), colour_get_value(imageColor));
 } else {
-	sprite_index = spr_teacherPrototype;
+	sprite_index = spr_studentCrawl;
+	//spr_teacherPrototype.image_blend = imageColor
 //instance_create_layer(x+30,y+10,"Instances", obj_emptyDesk)
 }
 
@@ -249,7 +252,7 @@ if (buffer_time > 0) then buffer_time -= 1/room_speed;
 
 // ALL CODE BELOW IS FOR CLAMPING BORDERS
 x = clamp(x, sprite_width/2, room_width-sprite_width/2)
-y = clamp(y, sprite_height/2, room_height-sprite_height/2)
+y = clamp(y, sprite_height/2, room_height-sprite_height/2 + 30)
 
 
 //BELOW ARE PHYSICS FOR PASSIVE COLLISIONS BETWEEN OTHER SIMPLE STUDENTS********************

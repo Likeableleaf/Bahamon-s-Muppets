@@ -8,6 +8,7 @@ if instance_nearest(x,y,obj_simpleStudent).inDesk == true {
 		if (instance_nearest(x,y,obj_simpleStudent).id != owner && owner != noone) {
 			//change ai state
 			instance_nearest(x,y,obj_simpleStudent).inDesk = false;
+			//instance_nearest(x,y,obj_simpleStudent).imageColor = owner.object_index.imageColor
 			// boot player
 			//instance_nearest(x,y,obj_simpleStudent).direction = 
 			//var dirct = point_direction(x,y,instance_nearest(x,y,obj_simpleStudent).x, instance_nearest(x,y,obj_simpleStudent).y)
