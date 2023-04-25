@@ -81,6 +81,7 @@
     {"id":{"name":"spr_studentInDeskV1","path":"sprites/spr_studentInDeskV1/spr_studentInDeskV1.yy",},},
     {"id":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},},
     {"id":{"name":"scr_on_click_credit","path":"scripts/scr_on_click_credit/scr_on_click_credit.yy",},},
+    {"id":{"name":"obj_buttonEndScreen","path":"objects/obj_buttonEndScreen/obj_buttonEndScreen.yy",},},
     {"id":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},},
     {"id":{"name":"obj_emptyDesk","path":"objects/obj_emptyDesk/obj_emptyDesk.yy",},},
     {"id":{"name":"spr_teacherPrototype","path":"sprites/spr_teacherPrototype/spr_teacherPrototype.yy",},},
