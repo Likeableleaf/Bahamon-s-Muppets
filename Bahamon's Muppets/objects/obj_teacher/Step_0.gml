@@ -1,11 +1,37 @@
 /// @description Insert description here
 // You can write your code in this editor
-for (var i = 0; i < array_length(numbAI); ++i;)
+/*for (var i = 0; i < array_length(numbAI); ++i;)
 {
     if(not instance_exists(numbAI[i].object_index)) {
 		array_delete(numbAI,i,1)
 	}
-}
+}*/
+if(!global.menuOpen){
+	if(instance_exists(obj_simpleStudent) and !instance_exists(obj_studentInDesk) and !instance_exists(obj_Player)){
+		simpStudentCount = instance_number(obj_simpleStudent)
+			if(simpStudentCount < 2 && simpStudentCount > 0){
+				global.playerNumber[0] = instance_nearest(x,y,obj_simpleStudent).playerNum;
+				instance_destroy(obj_teacher);
+			}
+		
+	}
+	if(instance_exists(obj_studentInDesk) and !instance_exists(obj_simpleStudent) and !instance_exists(obj_Player)){
+		stnInDeskCount = instance_number(obj_studentInDesk)
+			if(stnInDeskCount < 2 && stnInDeskCount > 0){
+				global.playerNumber[0] = instance_nearest(x,y,obj_studentInDesk).playerNum;
+				instance_destroy(obj_teacher);
+			}
+	}
+	if(instance_exists(obj_Player) and !instance_exists(obj_studentInDesk) and !instance_exists(obj_simpleStudent)){
+		playerObjCount = instance_number(obj_Player)
+			if(playerObjCount < 2 && playerObjCount > 0){
+				global.playerNumber[0] = instance_nearest(x,y,obj_Player).playerNum;
+				instance_destroy(obj_teacher);
+			}
+	}
+	
+}//when menu is closed
+
 if(greenlight == false) {
 	
 	/*for(i=0; i<array_length(numbAI); ++i;) {
@@ -79,24 +105,13 @@ if (canShoot == true) {
 			} 
 		}
 		
-	}
-}
-if greenlight then image_angle=0;
-b = 0
-for(i=b; i<instance_number(obj_simpleStudent); ++i;) {
-	instances = instance_find(obj_simpleStudent,i)
-	b++;
-}
-for(i=b; i<instance_number(obj_Player); ++i;) {
-	instances = instance_find(obj_Player,i)
-	b++;
-}
-for(i=b; i<instance_number(obj_studentInDesk); ++i;) {
-	instances = instance_find(obj_studentInDesk,i)
-	b++;
-}
-if(array_length(instances) == 1) {
-	global.winner = get_object_name(instances[0])
-	instance_destroy(obj_teacher)
-}
+	}//can shoot
+}//if its redlight
+
+//re-adjust image if greenlight
+if (greenlight){ image_angle=0};
+
+
+
+
 
