@@ -38,8 +38,8 @@
 			//generate emptyDesk
 			instance_create_layer(x+30,y+30,"Instances", obj_emptyDesk)
 			
-			// destroy kick
-			instance_destroy(obj_kick)
+			// destroy throwable
+			instance_destroy(obj_throwable)
 		}
 } else {
 	/*for (var i = 0; i < array_length(obj_teacher.numbAI); ++i;) {
