@@ -35,6 +35,7 @@ if (canShoot == true) {
 				if(instance_exists(obj_simpleStudent)){
 					/*/// Create throwables
 					instance_create_layer(x, y, "Instances", obj_throwable)
+					obj_throwable.target = instance_nearest(x, y, obj_simpleStudent).id
 					// Set direction of throwables
 					obj_throwable.direction = point_direction(x, y, obj_simpleStudent.x, obj_simpleStudent.y)
 					canShoot = false
@@ -51,6 +52,7 @@ if (canShoot == true) {
 				if(instance_exists(obj_studentInDesk)) {
 					// Create throwables
 					instance_create_layer(x, y, "Instances", obj_throwable)
+					obj_throwable.target = instance_nearest(x, y, obj_studentInDesk).id
 					// Set direction of throwables
 					obj_throwable.direction = point_direction(x, y, obj_studentInDesk.x, obj_studentInDesk.y)
 					canShoot = false
@@ -67,6 +69,7 @@ if (canShoot == true) {
 				if(instance_exists(obj_Player)){
 					// Create throwables
 					instance_create_layer(x, y, "Instances", obj_throwable)
+					obj_throwable.target = instance_nearest(x, y, obj_Player).id
 					// Set direction of throwables
 					obj_throwable.direction = point_direction(x, y, obj_Player.x, obj_Player.y)
 					canShoot = false
