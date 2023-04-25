@@ -18,7 +18,7 @@ if(seconds > 0) {
 	// Timer for redlight duration alarm
 	seconds = 10;
 	} else {
-	seconds = irandom_range(60,300)
+	seconds = irandom_range(20,50)
 	}
 }
 
