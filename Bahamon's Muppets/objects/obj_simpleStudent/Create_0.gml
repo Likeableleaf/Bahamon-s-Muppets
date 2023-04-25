@@ -9,6 +9,10 @@ buffer_time = 0;
 inDesk = false;
 chosenID = noone;
 
+hsp = 0;
+vsp = 0;
+
+
 playerNum = global.playerCount;
 
 //set player color

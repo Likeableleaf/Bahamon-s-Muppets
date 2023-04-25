@@ -250,3 +250,44 @@ if (buffer_time > 0) then buffer_time -= 1/room_speed;
 // ALL CODE BELOW IS FOR CLAMPING BORDERS
 x = clamp(x, sprite_width/2, room_width-sprite_width/2)
 y = clamp(y, sprite_height/2, room_height-sprite_height/2)
+
+
+//BELOW ARE PHYSICS FOR PASSIVE COLLISIONS BETWEEN OTHER SIMPLE STUDENTS********************
+
+var knockback_strength = 10;
+var onepixel = sign(hsp) //moving left or right? right = 1, left = -1.
+if (place_meeting(x+hsp,y,instance_nearest(x,y,obj_simpleStudent)))
+{
+    //move as close as we can
+    while (!place_meeting(x+onepixel,y,instance_nearest(x,y,obj_simpleStudent)))
+    {
+        x = x + onepixel;
+    }
+   // hsp = 0;
+	// calculate knockback direction and apply to this desk and the other desk
+	var other_desk = instance_place(x+hsp, y, instance_nearest(x,y,obj_simpleStudent));
+    var dir = point_direction(other_desk.x, other_desk.y, x, y);
+    motion_add(dir, knockback_strength);
+    other_desk.motion_add(dir + 180, knockback_strength);
+}
+x = x + hsp;
+
+var onepixel = sign(vsp) //up = -1, down = 1.
+if (place_meeting(x,y+vsp,instance_nearest(x,y,obj_simpleStudent)))
+{
+    //move as close as we can
+    while (!place_meeting(x,y+onepixel,instance_nearest(x,y,obj_simpleStudent)))
+    {
+        y = y + onepixel;
+    }
+  //  vsp = 0;
+	// calculate knockback direction and apply to this desk and the other desk
+    var other_desk = instance_place(x, y+vsp, instance_nearest(x,y,obj_simpleStudent));
+    var dir = point_direction(other_desk.x, other_desk.y, x, y);
+    motion_add(dir, knockback_strength);
+    other_desk.motion_add(dir + 180, knockback_strength);
+	
+}
+y = y + vsp;
+
+
