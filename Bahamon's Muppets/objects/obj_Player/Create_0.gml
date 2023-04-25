@@ -11,6 +11,7 @@ inDesk = false;
 //milestone tracking:
 kicksMade = 0;
 bailSavesMade = 0;
+hitsMade = 0;
 
 
 playerNum = global.playerCount;
