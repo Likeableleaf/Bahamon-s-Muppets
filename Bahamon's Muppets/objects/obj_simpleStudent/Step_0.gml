@@ -227,11 +227,11 @@ if inDesk {
 	sprite_index = spr_studentInDeskV1;
 } else if (!inDesk && buffer_time == 0)  {
 	buffer_time = 1;
-	sprite_index = spr_teacherPrototype;
+	sprite_index = spr_studentCrawl;
 	//spr_teacherPrototype.image_blend = imageColor
 	//spr_teacherPrototype.image_blend = make_colour_hsv(colour_get_value(imageColor), colour_get_value(imageColor), colour_get_value(imageColor));
 } else {
-	sprite_index = spr_teacherPrototype;
+	sprite_index = spr_studentCrawl;
 	//spr_teacherPrototype.image_blend = imageColor
 //instance_create_layer(x+30,y+10,"Instances", obj_emptyDesk)
 }
