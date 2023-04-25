@@ -27,7 +27,7 @@ if totalseconds < 10 and totalminutes < 10{
 	draw_text(8, 88, string(totalminutes) + " : " + string(totalseconds));
 }
 if (obj_teacher.greenlight == false) {
-	draw_circle_colour(obj_teacher.x+800, obj_teacher.y+10, 40, c_red, c_red, false);
+	draw_circle_colour(obj_teacher.x+800, obj_teacher.y+20, 40, c_red, c_red, false);
 } else {
-	draw_circle_colour(obj_teacher.x+800, obj_teacher.y+10, 40, c_green, c_green, false);
+	draw_circle_colour(obj_teacher.x+800, obj_teacher.y+20, 40, c_green, c_green, false);
 }

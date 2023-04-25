@@ -114,9 +114,41 @@ if (inDesk) {
 		canKick = false
 		// Reset alarm
 		alarm[1] = 60
+	} else if (canKick == true && (not instance_exists(obj_studentInDesk)) and instance_exists(obj_Player)) {
+	// Set sprite to kick
+	//image_index = 1
+	if(obj_teacher.greenlight == true) {
+		// Generate direction towards other students
+		var px, py
+		px = instance_nearest(x,y,obj_Player).x;
+		py = instance_nearest(x,y,obj_Player).y;
+		// checks if player is in range
+		if (distance_to_object(instance_nearest(x,y,obj_Player)) <= 5) {
+			//points to kick player
+			direction = point_direction(x, y, px, py) + 180	
+			image_angle = point_direction(x, y, px, py) + -90;
+			instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+			obj_kick.owner = id
+			obj_kick.image_angle = image_angle
+		} else {
+			image_angle = point_direction(x, y, px, py) + -270;
+			direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
+			// Set direction to the generated direction
+			instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+			instance_nearest(x, y, obj_kick).owner = id
+			instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
+		}
+		// Set speed
+		speed = 4
+		// Set canKick to false
+		canKick = false
+		// Reset alarm
+		alarm[1] = 60
 	}
-} if(obj_teacher.greenlight == true) || (obj_teacher.greenlight == false) {
-	if(obj_simpleStudent.inDesk == false) {
+}
+}
+
+if(obj_simpleStudent.inDesk == false) {
 		var dx, dy
 		dx = instance_nearest(x,y,obj_emptyDesk).x;
 		dy = instance_nearest(x,y,obj_emptyDesk).y;
@@ -133,7 +165,6 @@ if (inDesk) {
 			//obj_kick.owner = id
 			//obj_kick.image_angle = image_angle
 		}
-	}
 }
 /* else if (canKick == true && (instance_exists(obj_studentInDesk)) and instance_exists(obj_Player) and (point_direction(x, y, obj_studentInDesk.x, obj_studentInDesk.y) > point_direction(x, y, obj_Player.x, obj_Player.y))) {
 	// Set sprite to kick
@@ -166,39 +197,7 @@ if (inDesk) {
 		// Reset alarm
 //*/		alarm[1] = 60
 //*/	}
-//*/} //*/
-if (canKick == true && (not instance_exists(obj_studentInDesk)) and instance_exists(obj_Player)) {
-	// Set sprite to kick
-	//image_index = 1
-	if(obj_teacher.greenlight == true) {
-		// Generate direction towards other students
-		var px, py
-		px = instance_nearest(x,y,obj_Player).x;
-		py = instance_nearest(x,y,obj_Player).y;
-		// checks if player is in range
-		if (distance_to_object(instance_nearest(x,y,obj_Player)) <= 5) {
-			//points to kick player
-			direction = point_direction(x, y, px, py) + 180	
-			image_angle = point_direction(x, y, px, py) + -90;
-			instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
-			obj_kick.owner = id
-			obj_kick.image_angle = image_angle
-		} else {
-			image_angle = point_direction(x, y, px, py) + -270;
-			direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
-			// Set direction to the generated direction
-			instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
-			instance_nearest(x, y, obj_kick).owner = id
-			instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
-		}
-		// Set speed
-		speed = 4
-		// Set canKick to false
-		canKick = false
-		// Reset alarm
-		alarm[1] = 60
-	}
-} 	
+//*/} //*/ 	
 if(vspeed != 0) {
 	// Slow down student
 	speed -= 0.2
