@@ -78,19 +78,20 @@ if (canShoot == true) {
 }
 if greenlight then image_angle=0;
 b = 0
-for(i=b; i<instance_count(obj_simpleStudent); ++i;) {
+for(i=b; i<instance_number(obj_simpleStudent); ++i;) {
 	instances = instance_find(obj_simpleStudent,i)
 	b++;
 }
-for(i=b; i<instance_count(obj_Player); ++i;) {
+for(i=b; i<instance_number(obj_Player); ++i;) {
 	instances = instance_find(obj_Player,i)
 	b++;
 }
-for(i=b; i<instance_count(obj_studentInDesk); ++i;) {
+for(i=b; i<instance_number(obj_studentInDesk); ++i;) {
 	instances = instance_find(obj_studentInDesk,i)
 	b++;
 }
 if(array_length(instances) == 1) {
-	
+	global.winner = get_object_name(instances[0])
+	instance_destroy(obj_teacher)
 }
 

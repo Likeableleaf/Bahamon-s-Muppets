@@ -78,10 +78,14 @@ if (inDesk) {
 		var px, py
 		for (var i = 0; i < maxVal; ++i;)
 		{
-			if(instance_nearest(x,y,obj_simpleStudent).id == ais[i]) {
-				chosenID = ais[i]
+			if(instance_exists(ais[i])){
+				if(instance_nearest(x,y,obj_simpleStudent).id == ais[i]) {
+					chosenID = ais[i]
+				
+				}
 			}
 		}
+	}
 		ai = chosenID.object_index
 		px = ai.x		
 		py = ai.y
@@ -173,15 +177,14 @@ if (inDesk) {
 		// Reset alarm
 		alarm[1] = 60
 	}
-} else {
-	if(vspeed != 0) {
+} 	if(vspeed != 0) {
 	// Slow down student
 	speed -= 0.2
 	}
 	// Set sprite to regular
 	image_index = 0
-}} else {
-	if(obj_teacher.greenlight == true) || (obj_teacher.greenlight == false) {
+if(obj_teacher.greenlight == true) || (obj_teacher.greenlight == false) {
+	if(obj_simpleStudent.inDesk == false) {
 		var dx, dy
 		dx = instance_nearest(x,y,obj_emptyDesk).x;
 		dy = instance_nearest(x,y,obj_emptyDesk).y;
@@ -199,15 +202,17 @@ if (inDesk) {
 			//obj_kick.image_angle = image_angle
 		
 	}
-} else {
+}
+}
+
 	if(speed != 0) {
 	// Slow down student
 	speed -= 0.2
 	}
 	// Set sprite to regular
 	image_index = 0
-}
-}
+
+
 
 // Check for if canGrab is true
 if (canGrab == true) {
