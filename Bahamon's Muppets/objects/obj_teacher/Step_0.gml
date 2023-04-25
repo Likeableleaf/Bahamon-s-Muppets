@@ -7,13 +7,15 @@ for (var i = 0; i < array_length(numbAI); ++i;)
 	}
 }
 if(greenlight == false) {
-	for(i=0; i<array_length(numbAI); ++i;) {
+	
+	/*for(i=0; i<array_length(numbAI); ++i;) {
 		val = numbAI[i]
 		ai = val.object_index
 		if(ai.inDesk == false) {
 			instance_destroy(ai)
 		}
-	}
+	}*/
+	
 if (canShoot == true) {
 // Check to see if greenlight is false
 	if (greenlight == false) {

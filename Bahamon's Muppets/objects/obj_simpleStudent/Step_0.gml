@@ -148,7 +148,14 @@ if (inDesk) {
 }
 }
 
-if(obj_simpleStudent.inDesk == false) {
+if(instance_nearest(x,y,obj_simpleStudent).inDesk == false) {
+		
+		//kill the ai simple student if teacher is in redlight and ai is out of desk
+		if(obj_teacher.greenlight == false){
+		instance_destroy(instance_nearest(x,y,obj_simpleStudent));
+		}
+	
+	
 		var dx, dy
 		dx = instance_nearest(x,y,obj_emptyDesk).x;
 		dy = instance_nearest(x,y,obj_emptyDesk).y;

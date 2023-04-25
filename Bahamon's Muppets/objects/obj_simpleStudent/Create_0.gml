@@ -7,6 +7,7 @@ alarm[1] = 30
 canGrab = true
 buffer_time = 0;
 inDesk = false;
+chosenID = noone;
 
 playerNum = global.playerCount;
 
