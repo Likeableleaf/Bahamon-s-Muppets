@@ -64,6 +64,7 @@
     {"id":{"name":"obj_mileStones","path":"objects/obj_mileStones/obj_mileStones.yy",},},
     {"id":{"name":"Background_carpet","path":"sprites/Background_carpet/Background_carpet.yy",},},
     {"id":{"name":"obj_throwable","path":"objects/obj_throwable/obj_throwable.yy",},},
+    {"id":{"name":"obj_music","path":"objects/obj_music/obj_music.yy",},},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
     {"id":{"name":"scr_on_click_quit","path":"scripts/scr_on_click_quit/scr_on_click_quit.yy",},},
     {"id":{"name":"obj_backwall","path":"objects/obj_backwall/obj_backwall.yy",},},
