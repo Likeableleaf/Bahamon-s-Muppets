@@ -46,3 +46,19 @@ switch(playerNum) {
         imageColor = c_aqua;
         break;
 }
+temp = 0
+for (var i = 0; i < instance_number(obj_Player); ++i;)
+{
+    numbPlayers[i] = instance_find(obj_Player,i);
+	temp ++;
+}
+for (var i = temp; i < instance_number(obj_simpleStudent); ++i;)
+{
+    numbPlayers[i] = instance_find(obj_simpleStudent,i);
+	temp ++;
+}
+for (var i = temp; i < instance_number(obj_studentInDesk); ++i;)
+{
+    numbPlayers[i] = instance_find(obj_studentInDesk,i);
+	temp ++;
+}
