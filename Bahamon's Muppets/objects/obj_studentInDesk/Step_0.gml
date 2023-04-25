@@ -6,27 +6,11 @@ direction = point_direction(x, y, mouse_x, mouse_y)
 // Set the rotation of student to match mouse
 image_angle = point_direction(x, y, mouse_x, mouse_y) + -90
 // Check if space bar is pressed
-
-if (keyboard_check_pressed(vk_space)) {
+if(global.menuOpen == false) {
+	if (keyboard_check_pressed(vk_space)) {
 	// Set sprite to kick
-	//image_index = 1
-	// Set speed
-	if(inDesk){
-		//if(image_angle >= 0) and (image_angle <= 90) {
-		//	var _xx = x + lengthdir_x(25, image_angle);
-		//	var _yy = y + lengthdir_y(60, image_angle);
-		//} else if (image_angle >= 90) and (image_angle <= 180) {
-		//	var _xx = x + lengthdir_x(25, image_angle);
-		//	var _yy = y + lengthdir_y(60, image_angle);
-		//} else if (image_angle >= 180) and (image_angle <= 270) {
-		//	var _xx = x + lengthdir_x(25, image_angle);
-		//	var _yy = y + lengthdir_y(60, image_angle);
-		//} else if (image_angle >= 270) and (image_angle <= 360) {
-		//	var _xx = x + lengthdir_x(25, image_angle);
-		//	var _yy = y + lengthdir_y(60, image_angle);
-		//}
-			//var _xx = x + lengthdir_x(25, image_angle);
-			//var _yy = y + lengthdir_y(60, image_angle);
+	//image_index = 1		// Set speed
+		if(inDesk){
 			instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick);
 			obj_kick.owner = id
 			obj_kick.image_angle = image_angle
@@ -47,7 +31,7 @@ if (keyboard_check_pressed(vk_space)) {
 	image_index = 0
 }
 }
-
+}
 
 //swap between in desk and crawling
 if inDesk {
