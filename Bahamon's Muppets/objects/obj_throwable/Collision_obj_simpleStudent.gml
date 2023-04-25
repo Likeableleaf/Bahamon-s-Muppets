@@ -21,27 +21,26 @@
 */
 
 	if (obj_simpleStudent.inDesk == true) {
-		// Check if player is you
-		if (instance_nearest(x,y,obj_simpleStudent).id != target && target != noone) {
 			//change ai state
 			instance_nearest(x,y,obj_simpleStudent).inDesk = false;
-			// boot player
-			//instance_nearest(x,y,obj_simpleStudent).direction = 
-			//var dirct = point_direction(x,y,instance_nearest(x,y,obj_simpleStudent).x, instance_nearest(x,y,obj_simpleStudent).y)
-			//var knockback = -8
-			//obj_simpleStudent.motion_set(dirct, knockback);
-			//var dir = point_direction(obj_simpleStudent.x, obj_simpleStudent.y, x, y);
-			//instance_nearest(x,y,obj_simpleStudent).speed = motion_add(dir, knockback_strength);
-			//alarm[1] = 5
-			//obj_simpleStudent.x += 20
-			//obj_simpleStudent.y += 20
+			
+			/*// boot player
+			instance_nearest(x,y,obj_simpleStudent).direction = 
+			var dirct = point_direction(x,y,instance_nearest(x,y,obj_simpleStudent).x, instance_nearest(x,y,obj_simpleStudent).y)
+			var knockback = -8
+			obj_simpleStudent.motion_set(dirct, knockback);
+			var dir = point_direction(obj_simpleStudent.x, obj_simpleStudent.y, x, y);
+			instance_nearest(x,y,obj_simpleStudent).speed = motion_add(dir, knockback_strength);
+			alarm[1] = 5
+			obj_simpleStudent.x += 20
+			obj_simpleStudent.y += 20//*/
+			
 			//generate emptyDesk
 			instance_create_layer(x+30,y+30,"Instances", obj_emptyDesk)
 			
 			// destroy throwable
-			instance_destroy(obj_throwable)
-		}
-} else {
+			instance_destroy()
+	} else {
 	/*for (var i = 0; i < array_length(obj_teacher.numbAI); ++i;) {
 		aiID = obj_teacher.numbAI[i]
 			if(aiID == obj_simpleStudent.id) {
@@ -50,9 +49,9 @@
 		}
 	}	
 	*/
-	if(instance_nearest(x,y,obj_simpleStudent).id == target) and (target != noone){
-		instance_destroy(instance_nearest(x,y,obj_simpleStudent))
-		instance_destroy(obj_throwable)
-	}
+		//destroy student
+		instance_destroy(instance_nearest(x,y,obj_simpleStudent));
+		
+		//destroy self
+		instance_destroy();
 }
-// Destroy throwable
