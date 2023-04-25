@@ -32,8 +32,8 @@ if(global.menuOpen == false) {
 // Check if 'A' button pressed
 if gamepad_button_check_pressed(pad_num, gp_face1)
     {
-	// Set sprite to kick
-	image_index = 1
+	/*// Set sprite to kick
+	image_index = 1//*/
 	// Set speed
 	if(inDesk){
 	instance_create_layer(x,y,"Instances",obj_kick)

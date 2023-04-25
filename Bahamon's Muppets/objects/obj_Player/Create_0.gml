@@ -13,39 +13,41 @@ kicksMade = 0;
 bailSavesMade = 0;
 hitsMade = 0;
 
-
+//set player number
 playerNum = global.playerCount;
 
 //set player color
 switch(playerNum) {
-    case 1:
+    case 0:
         imageColor = c_lime;
         break;
-    case 2:
+    case 1:
         imageColor = c_red;
         break;
-    case 3:
+    case 2:
         imageColor = c_orange;
         break;
-    case 4:
+    case 3:
         imageColor = c_olive;
         break;
-    case 5:
+    case 4:
         imageColor = c_blue;
         break;
-    case 6:
+    case 5:
         imageColor = c_purple;
         break;
-    case 7:
+    case 6:
         imageColor = c_fuchsia;
         break;
-    case 8:
+    case 7:
         imageColor = c_teal;
         break;
-    case 9:
+    case 8:
         imageColor = c_aqua;
         break;
 }
+
+//milestone initialize
 temp = 0
 for (var i = 0; i < instance_number(obj_Player); ++i;)
 {

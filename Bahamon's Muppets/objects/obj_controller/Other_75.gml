@@ -17,7 +17,7 @@ case "gamepad discovered":                     // A game pad has been discovered
 		global.playerCount++;
 		with (player[pad])
             {
-            image_index = instance_number(object_index);
+           // image_index = instance_number(object_index);
             pad_num = pad;
             }
         }
