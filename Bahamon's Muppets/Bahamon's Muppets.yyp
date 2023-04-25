@@ -47,6 +47,7 @@
     {"id":{"name":"Thowing_object_nohit","path":"sounds/Thowing_object_nohit/Thowing_object_nohit.yy",},},
     {"id":{"name":"Empty_kick_soft","path":"sounds/Empty_kick_soft/Empty_kick_soft.yy",},},
     {"id":{"name":"obj_FinalScore","path":"objects/obj_FinalScore/obj_FinalScore.yy",},},
+    {"id":{"name":"spr_studentCrawl","path":"sprites/spr_studentCrawl/spr_studentCrawl.yy",},},
     {"id":{"name":"obj_credits","path":"objects/obj_credits/obj_credits.yy",},},
     {"id":{"name":"spr_studentPrototype","path":"sprites/spr_studentPrototype/spr_studentPrototype.yy",},},
     {"id":{"name":"obj_menuText","path":"objects/obj_menuText/obj_menuText.yy",},},
