@@ -1,5 +1,19 @@
 /// @description Insert description here
 // You can write your code in this editor
+for (var i = 0; i < array_length(numbAI); ++i;)
+{
+    if(not instance_exists(numbAI[i].object_index)) {
+		array_delete(numbAI,i,1)
+	}
+}
+if(greenlight == false) {
+	for(i=0; i<array_length(numbAI); ++i;) {
+		val = numbAI[i]
+		ai = val.object_index
+		if(ai.inDesk == false) {
+			instance_destroy(ai)
+		}
+	}
 if (canShoot == true) {
 // Check to see if greenlight is false
 	if (greenlight == false) {
@@ -9,11 +23,17 @@ if (canShoot == true) {
 		if(instance_exists(obj_simpleStudent)){
 			// Check if simple AI is moving
 			if (obj_simpleStudent.speed != 0) {
-				if(obj_simpleStudent.inDesk == false) {
-					instance_destroy(obj_simpleStudent)
+				
+				/*if(obj_simpleStudent.inDesk == false) {
+					for (var i = 0; i < array_length(numbAI); ++i;) {
+						ai = numbAI[i].object_index
+						if(ai.inDesk == false) {
+							instance_destroy(ai)
+						}
+					}
 				}
 				if(instance_exists(obj_simpleStudent)){
-					// Create throwables
+					/*/// Create throwables
 					instance_create_layer(x, y, "Instances", obj_throwable)
 					// Set direction of throwables
 					obj_throwable.direction = point_direction(x, y, obj_simpleStudent.x, obj_simpleStudent.y)
