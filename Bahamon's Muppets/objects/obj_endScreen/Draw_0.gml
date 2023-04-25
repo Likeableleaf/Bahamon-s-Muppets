@@ -12,6 +12,7 @@ draw_sprite(spr_studentInDeskV1,0, x+200,y+40);
 
 
 draw_text_color(x, y+50, "Winner!", c_black,c_black,c_black,c_black,1);
+//draw_text_color(x, y+50, , c_black,c_black,c_black,c_black,1);
 
 draw_sprite_ext(spr_studentInDeskV1, 1, x+400, y+130, image_xscale, image_yscale, image_angle, imageColor1, image_alpha);
 draw_sprite(spr_studentInDeskV1,0, x+400,y+130);

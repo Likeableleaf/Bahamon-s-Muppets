@@ -77,4 +77,20 @@ if (canShoot == true) {
 	}
 }
 if greenlight then image_angle=0;
+b = 0
+for(i=b; i<instance_count(obj_simpleStudent); ++i;) {
+	instances = instance_find(obj_simpleStudent,i)
+	b++;
+}
+for(i=b; i<instance_count(obj_Player); ++i;) {
+	instances = instance_find(obj_Player,i)
+	b++;
+}
+for(i=b; i<instance_count(obj_studentInDesk); ++i;) {
+	instances = instance_find(obj_studentInDesk,i)
+	b++;
+}
+if(array_length(instances) == 1) {
+	
+}
 
