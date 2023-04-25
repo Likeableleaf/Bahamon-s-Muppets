@@ -1,6 +1,13 @@
 /// @description Insert description here
+for (var i = 0; i < instance_number(obj_simpleStudent); ++i;)
+	{
+    ais[i] = instance_find(obj_simpleStudent,i);
+	}
+maxVal = array_length(ais)
+randomai = random_range(0, maxVal)
+	chosenaiID = ais[randomai]
 if (inDesk) {
-if (canKick == true && (instance_exists(obj_studentInDesk))) {
+if (canKick == true && (instance_exists(obj_studentInDesk)) and instance_exists(obj_Player) and (point_direction(x, y, obj_studentInDesk.x, obj_studentInDesk.y) < point_direction(x, y, obj_Player.x, obj_Player.y))) {
 	// Set sprite to kick
 	//image_index = 1
 	solid = false
@@ -10,6 +17,131 @@ if (canKick == true && (instance_exists(obj_studentInDesk))) {
 	py = instance_nearest(x,y,obj_studentInDesk).y;
 	// checks if player is in range
 	if (distance_to_object(instance_nearest(x,y,obj_studentInDesk)) <= 5) {
+	//points to kick player
+	direction = point_direction(x, y, px, py) + 180	
+	image_angle = point_direction(x, y, px, py) + -90;
+	instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+	obj_kick.owner = id
+	obj_kick.image_angle = image_angle
+	} else {
+	image_angle = point_direction(x, y, px, py) + -270;
+	direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
+	// Set direction to the generated direction
+	instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+	instance_nearest(x, y, obj_kick).owner = id
+	instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
+	}
+	// Set speed
+	speed = 4
+	// Set canKick to false
+	canKick = false
+	// Reset alarm
+	alarm[1] = 60
+} else if (canKick == true && (instance_exists(obj_studentInDesk)) and not instance_exists(obj_Player)) {
+	// Set sprite to kick
+	//image_index = 1
+	solid = false
+	// Generate direction towards other students
+	var px, py
+	px = instance_nearest(x,y,obj_studentInDesk).x;
+	py = instance_nearest(x,y,obj_studentInDesk).y;
+	// checks if player is in range
+	if (distance_to_object(instance_nearest(x,y,obj_studentInDesk)) <= 5) {
+	//points to kick player
+	direction = point_direction(x, y, px, py) + 180	
+	image_angle = point_direction(x, y, px, py) + -90;
+	instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+	obj_kick.owner = id
+	obj_kick.image_angle = image_angle
+	} else {
+	image_angle = point_direction(x, y, px, py) + -270;
+	direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
+	// Set direction to the generated direction
+	instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+	instance_nearest(x, y, obj_kick).owner = id
+	instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
+	}
+	// Set speed
+	speed = 4
+	// Set canKick to false
+	canKick = false
+	// Reset alarm
+	alarm[1] = 60
+} else if (canKick == true and instance_exists(obj_simpleStudent) and not instance_exists(obj_studentInDesk) and not instance_exists(obj_Player)) {
+	// Set sprite to kick
+	//image_index = 1
+	solid = false
+	// Generate direction towards other students
+	var px, py
+	//if(instance_exists(obj_simpleStudent).id == chosenaiID) {
+	ai = chosenaiID.object_index
+	px = ai.x		
+	py = ai.y
+	//}
+	//px = instance_nearest(x,y,obj_simpleStudent).x;
+	//py = instance_nearest(x,y,obj_simpleStudent).y;
+	// checks if player is in range
+	if (distance_to_object(ai) <= 5) {
+	//points to kick player
+	direction = point_direction(x, y, px, py) + 180	
+	image_angle = point_direction(x, y, px, py) + -90;
+	instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+	obj_kick.owner = id
+	obj_kick.image_angle = image_angle
+	} else {
+	image_angle = point_direction(x, y, px, py) + -270;
+	direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
+	// Set direction to the generated direction
+	instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+	instance_nearest(x, y, obj_kick).owner = id
+	instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
+	}
+	// Set speed
+	speed = 4
+	// Set canKick to false
+	canKick = false
+	// Reset alarm
+	alarm[1] = 60
+} else if (canKick == true && (instance_exists(obj_studentInDesk)) and instance_exists(obj_Player) and (point_direction(x, y, obj_studentInDesk.x, obj_studentInDesk.y) > point_direction(x, y, obj_Player.x, obj_Player.y))) {
+	// Set sprite to kick
+	//image_index = 1
+	solid = false
+	// Generate direction towards other students
+	var px, py
+	px = instance_nearest(x,y,obj_Player).x;
+	py = instance_nearest(x,y,obj_Player).y;
+	// checks if player is in range
+	if (distance_to_object(instance_nearest(x,y,obj_Player)) <= 5) {
+	//points to kick player
+	direction = point_direction(x, y, px, py) + 180	
+	image_angle = point_direction(x, y, px, py) + -90;
+	instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+	obj_kick.owner = id
+	obj_kick.image_angle = image_angle
+	} else {
+	image_angle = point_direction(x, y, px, py) + -270;
+	direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
+	// Set direction to the generated direction
+	instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+	instance_nearest(x, y, obj_kick).owner = id
+	instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
+	}
+	// Set speed
+	speed = 4
+	// Set canKick to false
+	canKick = false
+	// Reset alarm
+	alarm[1] = 60
+} else if (canKick == true && (not instance_exists(obj_studentInDesk)) and instance_exists(obj_Player)) {
+	// Set sprite to kick
+	//image_index = 1
+	solid = false
+	// Generate direction towards other students
+	var px, py
+	px = instance_nearest(x,y,obj_Player).x;
+	py = instance_nearest(x,y,obj_Player).y;
+	// checks if player is in range
+	if (distance_to_object(instance_nearest(x,y,obj_Player)) <= 5) {
 	//points to kick player
 	direction = point_direction(x, y, px, py) + 180	
 	image_angle = point_direction(x, y, px, py) + -90;
