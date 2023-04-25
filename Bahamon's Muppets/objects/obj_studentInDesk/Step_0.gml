@@ -30,6 +30,7 @@ if (keyboard_check_pressed(vk_space)) {
 			instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick);
 			obj_kick.owner = id
 			obj_kick.image_angle = image_angle
+			kicksMade = kicksMade + 1;
 			speed = -4
 	}else{
 	speed = 4;

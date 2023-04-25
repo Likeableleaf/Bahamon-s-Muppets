@@ -1,10 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
+imageColor = c_white;
+imageColor1 = c_white;
+imageColor2 = c_white;
+imageColor3 = c_white;
 playerNum = global.playerNumber[0]
 
 switch(playerNum) {
 	case 0:
-		imageColor = c_white
+		imageColor = c_white;
 		break;
     case 1:
         imageColor = c_lime;

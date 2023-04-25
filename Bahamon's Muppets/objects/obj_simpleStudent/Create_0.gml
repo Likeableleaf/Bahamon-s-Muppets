@@ -8,6 +8,7 @@ canGrab = true
 buffer_time = 0;
 inDesk = false;
 chosenID = noone;
+hitsMade = 0;
 
 hsp = 0;
 vsp = 0;

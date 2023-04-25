@@ -20,7 +20,7 @@ if instance_nearest(x,y,obj_simpleStudent).inDesk == true {
 			//obj_simpleStudent.y += 20
 			//generate emptyDesk
 			instance_create_layer(x+30,y+30,"Instances", obj_emptyDesk)
-			
+			owner.object_index.hitsMade = owner.object_index.hitsMade + 1;
 			// destroy kick
 			instance_destroy(obj_kick)
 		}
