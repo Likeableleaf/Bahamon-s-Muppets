@@ -66,6 +66,7 @@
     {"id":{"name":"scr_on_click_quit","path":"scripts/scr_on_click_quit/scr_on_click_quit.yy",},},
     {"id":{"name":"scr_get_hover","path":"scripts/scr_get_hover/scr_get_hover.yy",},},
     {"id":{"name":"Desk_rolling2","path":"sounds/Desk_rolling2/Desk_rolling2.yy",},},
+    {"id":{"name":"obj_endScreen","path":"objects/obj_endScreen/obj_endScreen.yy",},},
     {"id":{"name":"CountdownFont","path":"fonts/CountdownFont/CountdownFont.yy",},},
     {"id":{"name":"scr_on_click_replay","path":"scripts/scr_on_click_replay/scr_on_click_replay.yy",},},
     {"id":{"name":"BahamonsMuppets1Gameplay","path":"sounds/BahamonsMuppets1Gameplay/BahamonsMuppets1Gameplay.yy",},},

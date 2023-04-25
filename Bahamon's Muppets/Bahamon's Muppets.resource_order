@@ -44,6 +44,7 @@
     {"name":"scr_on_click_quit","order":5,"path":"scripts/scr_on_click_quit/scr_on_click_quit.yy",},
     {"name":"scr_get_hover","order":1,"path":"scripts/scr_get_hover/scr_get_hover.yy",},
     {"name":"Desk_rolling2","order":2,"path":"sounds/Desk_rolling2/Desk_rolling2.yy",},
+    {"name":"obj_endScreen","order":9,"path":"objects/obj_endScreen/obj_endScreen.yy",},
     {"name":"scr_on_click_replay","order":6,"path":"scripts/scr_on_click_replay/scr_on_click_replay.yy",},
     {"name":"BahamonsMuppets1Gameplay","order":11,"path":"sounds/BahamonsMuppets1Gameplay/BahamonsMuppets1Gameplay.yy",},
     {"name":"obj_studentCrawling","order":2,"path":"objects/obj_studentCrawling/obj_studentCrawling.yy",},
