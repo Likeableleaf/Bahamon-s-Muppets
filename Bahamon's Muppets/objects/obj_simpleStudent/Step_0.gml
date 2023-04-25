@@ -4,8 +4,8 @@ for (var i = 0; i < instance_number(obj_simpleStudent); ++i;)
     ais[i] = instance_find(obj_simpleStudent,i);
 	}
 maxVal = array_length(ais)
-randomai = random_range(0, maxVal)
-	chosenaiID = ais[randomai]
+//randomai = random_range(0, maxVal)
+//chosenaiID = ais[randomai]
 if (inDesk) {
 if (canKick == true && (instance_exists(obj_studentInDesk)) and instance_exists(obj_Player) and (point_direction(x, y, obj_studentInDesk.x, obj_studentInDesk.y) < point_direction(x, y, obj_Player.x, obj_Player.y))) {
 	// Set sprite to kick
@@ -73,8 +73,13 @@ if (canKick == true && (instance_exists(obj_studentInDesk)) and instance_exists(
 	solid = false
 	// Generate direction towards other students
 	var px, py
-	//if(instance_exists(obj_simpleStudent).id == chosenaiID) {
-	ai = chosenaiID.object_index
+	for (var i = 0; i < maxVal; ++i;)
+	{
+		if(instance_nearest(x,y,obj_simpleStudent).id == ais[i]) {
+			chosenID = ais[i]
+		}
+	}
+	ai = chosenID.object_index
 	px = ai.x		
 	py = ai.y
 	//}
