@@ -38,4 +38,4 @@ if(calcOther.id != id)
 	
 		}
 }*/
-
+audio_play_sound(Desk_crashing2, 10, false)

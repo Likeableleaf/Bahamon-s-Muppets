@@ -3,5 +3,6 @@
 function scr_on_click_endcredit(){
 	//instance_destroy(obj_credits);
 	//instance_destroy(obj_creditsButton);
+	audio_play_sound(Door_opening, 10, false)
 	layer_destroy("Credits");
 }
