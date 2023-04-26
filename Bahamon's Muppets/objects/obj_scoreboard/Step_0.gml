@@ -21,6 +21,17 @@ if(seconds > 0) {
 	} else {
 	seconds = irandom_range(20,50)
 	}
+} 
+
+if(totalseconds > 0) {
+	// Decrease time
+	totalseconds -= 15/room_speed
+} else if (totalminutes > 0 && totalseconds == 0) { 
+	totalminutes--;
+	// Set time to 0
+	totalseconds=60	
+} else {
+	totalseconds = 0
 }}
 
 if(global.started && !global.menustartclosed){
