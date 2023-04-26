@@ -8,174 +8,173 @@ maxVal = array_length(ais)
 //chosenaiID = ais[randomai]
 
 if (inDesk) {
-	if (canKick == true && (instance_exists(obj_studentInDesk)) and instance_exists(obj_Player) and (point_direction(x, y, obj_studentInDesk.x, obj_studentInDesk.y) < point_direction(x, y, obj_Player.x, obj_Player.y))) {
+	if (canKick == true && (instance_exists(obj_studentInDesk) || instance_exists(obj_Player) || instance_exists(obj_simpleStudent))) {
+		
+		//check if safe
 		if(obj_teacher.greenlight == true) {
-		// Set sprite to kick
-		//image_index = 1
-		// Generate direction towards other students
-		var px, py
-		px = instance_nearest(x,y,obj_studentInDesk).x;
-		py = instance_nearest(x,y,obj_studentInDesk).y;
-		// checks if player is in range
-		if (distance_to_object(instance_nearest(x,y,obj_studentInDesk)) <= 5) {
-		//points to kick player
-		direction = point_direction(x, y, px, py) + 180	
-		image_angle = point_direction(x, y, px, py) + -90;
-		instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
-		obj_kick.owner = id
-		obj_kick.image_angle = image_angle
-		} else {
-			image_angle = point_direction(x, y, px, py) + -270;
-			direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
-			// Set direction to the generated direction
-			instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
-			instance_nearest(x, y, obj_kick).owner = id
-			instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
-		}
-		// Set speed
-		speed = 4
-		// Set canKick to false
-		canKick = false
-		// Reset alarm
-		alarm[1] = 60
-	}
-} else if (canKick == true && (instance_exists(obj_studentInDesk)) and not instance_exists(obj_Player)) {
-	// Set sprite to kick
-	//image_index = 1
-	if(obj_teacher.greenlight == true) {
-		// Generate direction towards other students
-		var px, py
-		px = instance_nearest(x,y,obj_studentInDesk).x;
-		py = instance_nearest(x,y,obj_studentInDesk).y;
-		// checks if player is in range
-		if (distance_to_object(instance_nearest(x,y,obj_studentInDesk)) <= 5) {
-			//points to kick player
-			direction = point_direction(x, y, px, py) + 180	
-			image_angle = point_direction(x, y, px, py) + -90;
-			instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
-			obj_kick.owner = id
-			obj_kick.image_angle = image_angle
-		} else {
-			image_angle = point_direction(x, y, px, py) + -270;
-			direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
-			// Set direction to the generated direction
-			instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
-			instance_nearest(x, y, obj_kick).owner = id
-			instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
-		}
-		// Set speed
-		speed = 4
-		// Set canKick to false
-		canKick = false
-		// Reset alarm
-		alarm[1] = 60
-	}
-} else if (canKick == true and instance_exists(obj_simpleStudent) and not instance_exists(obj_studentInDesk) and not instance_exists(obj_Player)) {
-	// Set sprite to kick
-	//image_index = 1
-	if(obj_teacher.greenlight == true) {
-		// Generate direction towards other students
-		var px, py
-		px = instance_nearest(x,y,obj_simpleStudent).x
-		py = instance_nearest(x,y,obj_simpleStudent).y
-		/*for (var i = 0; i < maxVal; ++i;)
-		{
-			if(instance_exists(ais[i])){
-				if(instance_nearest(x,y,obj_simpleStudent).id == ais[i]) {
-					chosenID = ais[i]
+			
+			//init variables
+			var closest  = 100000000000;
+			var target = noone;
+			var closer = 100000000;
+			var closePlayer = noone;
+			var closeAI = noone;
+			
+			//check if mouse player exists and compare closest
+			if (instance_exists(obj_studentInDesk)) {
 				
+				//check if instance is inDesk
+				if (instance_nearest(x,y,obj_studentInDesk).inDesk) {
+					//compare closest with object's distance and set to the closer of the 2
+					closest = min(closest, distance_to_object(instance_nearest(x,y,obj_studentInDesk)));
 				}
 			}
-		}
-	
-		ai = chosenID.object_index
-		px = ai.x		
-		py = ai.y*/
-		//}
-		//px = instance_nearest(x,y,obj_simpleStudent).x;
-		//py = instance_nearest(x,y,obj_simpleStudent).y;
-		// checks if player is in range
-		if (distance_to_object(instance_nearest(x,y,obj_simpleStudent)) <= 5) {
-			//points to kick player
-			direction = point_direction(x, y, px, py) + 180	
-			image_angle = point_direction(x, y, px, py) + -90;
-			instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
-			obj_kick.owner = id
-			obj_kick.image_angle = image_angle
-		} else {
-			image_angle = point_direction(x, y, px, py) + -270;
-			direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
-			// Set direction to the generated direction
-			instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
-			instance_nearest(x, y, obj_kick).owner = id
-			instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
-		}
-		// Set speed
-		speed = 4
-		// Set canKick to false
-		canKick = false
-		// Reset alarm
-		alarm[1] = 60
-		}
-	} else if (canKick == true && (not instance_exists(obj_studentInDesk)) and instance_exists(obj_Player)) {
-	// Set sprite to kick
-	//image_index = 1
-	if(obj_teacher.greenlight == true) {
-		// Generate direction towards other students
-		var px, py
-		px = instance_nearest(x,y,obj_Player).x;
-		py = instance_nearest(x,y,obj_Player).y;
-		// checks if player is in range
-		if (distance_to_object(instance_nearest(x,y,obj_Player)) <= 5) {
-			//points to kick player
-			direction = point_direction(x, y, px, py) + 180	
-			image_angle = point_direction(x, y, px, py) + -90;
-			instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
-			obj_kick.owner = id
-			obj_kick.image_angle = image_angle
-		} else {
-			image_angle = point_direction(x, y, px, py) + -270;
-			direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
-			// Set direction to the generated direction
-			instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
-			instance_nearest(x, y, obj_kick).owner = id
-			instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
-		}
-		// Set speed
-		speed = 4
-		// Set canKick to false
-		canKick = false
-		// Reset alarm
-		alarm[1] = 60
+			
+			//check if controller player exists and compare closest
+			if (instance_exists(obj_Player)) {
+				
+				//reset closer
+				closer  = 100000000;
+				
+				//ensure will find other player inDesk;				
+				plyrs[instance_number(obj_Player)] = noone;
+				for (i = 0; i < instance_number(obj_Player)-1; i++) {
+					
+					//store player
+					plyrs[i] = instance_find(obj_Player, i);
+					
+					//check if inDesk
+					if (plyrs[i].inDesk) {
+						if (distance_to_object(plyrs[i]) != 0 && closer > distance_to_object(plyrs[i])) {
+							closer = min(closer, distance_to_object(plyrs[i]));
+							closePlayer = plyrs[i];
+						}					
+					}
+				}
+				
+				//check if value was calculated
+				if (closer != 100000000) {
+					//compare closest with object's distance and set to the closer of the 2
+					closest = min(closest, closer*2);
+				}
+			}
+			
+			//check if ai exists and compare closest
+			if (instance_exists(obj_simpleStudent)) {
+				
+				//reset closer
+				closer  = 100000000;
+				
+				//ensure will find other ai inDesk;				
+				ai[instance_number(obj_simpleStudent)] = noone;
+				for (i = 0; i < instance_number(obj_simpleStudent)-1; i++) {
+					
+					//store ai
+					ai[i] = instance_find(obj_simpleStudent, i);
+					
+					//check if inDesk
+					if (ai[i].inDesk) {
+						if (distance_to_object(ai[i]) != 0 && closer > distance_to_object(ai[i])) {
+							closer = min(closer, distance_to_object(ai[i]));
+							closeAI = ai[i];
+						}					
+					}
+				}
+				
+				//check if value was calculated
+				if (closer != 100000000) {
+					//compare closest with object's distance and set to the closer of the 2
+					closest = min(closest, closer*2);
+				}
+			}
+			
+			/*//find closest entity
+			closest = min(distance_to_object(instance_nearest(x,y,obj_studentInDesk)), 
+						  distance_to_object(instance_nearest(x,y,obj_Player)), 
+						  distance_to_object(instance_nearest(x,y,obj_simpleStudent))*2)//*/
+			
+			//set target to closest entity
+			if (distance_to_object(closeAI)*2 == closest){
+				target = closeAI;
+			} else if (distance_to_object(instance_nearest(x,y,obj_studentInDesk)) == closest) {
+				target = instance_nearest(x,y,obj_studentInDesk);
+			} else if (distance_to_object(closePlayer) == closest) {
+				target = closePlayer;
+			} else if (closest == 100000000000) {
+				target = noone;
+			}
+			
+			//if there is a closest entity
+			if (target != noone) {
+				// Generate direction towards other students
+				var px, py
+				px = target.x;
+				py = target.y;
+		
+				// checks if player is in range
+				if (distance_to_object(instance_nearest(x,y,target)) <= 5) {
+		
+					//points to kick player
+					direction = point_direction(x, y, px, py) + 180	
+					image_angle = point_direction(x, y, px, py) + -90;
+		
+					//generate kick
+					instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+					obj_kick.owner = id
+					obj_kick.image_angle = image_angle
+			
+				
+				} else {
+			
+					//point to move
+					image_angle = point_direction(x, y, px, py) + -270;
+					direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
+			
+					// Set direction to the generated direction
+					instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+					instance_nearest(x, y, obj_kick).owner = id
+					instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
+			
+				}
+		
+				// Set speed
+				speed = 4
+		
+				// Set canKick to false
+				canKick = false
+		
+				// Reset canKick timer
+				alarm[1] = 60
+			}
+		} 
 	}
-}
+} else if(inDesk == false) {
+		
+	//instance_nearest(x,y,obj_simpleStudent).imageColor = imageColor    what is this line doing?
+		
+	//kill the ai simple student if teacher is in redlight and ai is out of desk
+	if(obj_teacher.greenlight == false){
+		instance_destroy(instance_nearest(x,y,obj_simpleStudent));
+	}
+	
+	//find closest emptyDesk
+	var dx, dy
+	dx = instance_nearest(x,y,obj_emptyDesk).x;
+	dy = instance_nearest(x,y,obj_emptyDesk).y;
+	
+	//point to emptyDesk
+	direction = point_direction(x, y, dx, dy)
+		
+	// Set the rotation of ai match direction
+	image_angle = point_direction(x, y, dx, dy) + -90
+	
+	// Set speed
+	speed = 1
+	//instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick);
+	//obj_kick.owner = id
+	//obj_kick.image_angle = image_angle
 }
 
-if(instance_nearest(x,y,obj_simpleStudent).inDesk == false) {
-		instance_nearest(x,y,obj_simpleStudent).imageColor = imageColor
-		//kill the ai simple student if teacher is in redlight and ai is out of desk
-		if(obj_teacher.greenlight == false){
-		instance_destroy(instance_nearest(x,y,obj_simpleStudent));
-		}
-	
-	
-		var dx, dy
-		dx = instance_nearest(x,y,obj_emptyDesk).x;
-		dy = instance_nearest(x,y,obj_emptyDesk).y;
-		direction = point_direction(x, y, dx, dy)
-		// Set the rotation of student to match mouse
-		image_angle = point_direction(x, y, dx, dy) + -90
-		// Check if space bar is pressed
-		if (instance_exists(obj_emptyDesk)) {
-			// Set sprite to kick
-			//image_index = 1
-			// Set speed
-			speed = 1
-			//instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick);
-			//obj_kick.owner = id
-			//obj_kick.image_angle = image_angle
-		}
-}
 /* else if (canKick == true && (instance_exists(obj_studentInDesk)) and instance_exists(obj_Player) and (point_direction(x, y, obj_studentInDesk.x, obj_studentInDesk.y) > point_direction(x, y, obj_Player.x, obj_Player.y))) {
 	// Set sprite to kick
 	//image_index = 1
@@ -208,19 +207,10 @@ if(instance_nearest(x,y,obj_simpleStudent).inDesk == false) {
 //*/		alarm[1] = 60
 //*/	}
 //*/} //*/ 	
-if(vspeed != 0) {
+if(speed != 0) {
 	// Slow down student
 	speed -= 0.2
-	}
-	// Set sprite to regular
-	image_index = 0
-
-
-// Check for if canGrab is true
-if (canGrab == true) {
-	
 }
-
 
 //swap between in desk and crawling
 if inDesk {
@@ -228,14 +218,9 @@ if inDesk {
 } else if (!inDesk && buffer_time == 0)  {
 	buffer_time = 1;
 	sprite_index = spr_studentCrawl;
-	//spr_teacherPrototype.image_blend = imageColor
-	//spr_teacherPrototype.image_blend = make_colour_hsv(colour_get_value(imageColor), colour_get_value(imageColor), colour_get_value(imageColor));
 } else {
 	sprite_index = spr_studentCrawl;
-	//spr_teacherPrototype.image_blend = imageColor
-//instance_create_layer(x+30,y+10,"Instances", obj_emptyDesk)
 }
-
 
 //decrement the buffer over time
 if (buffer_time > 0) then buffer_time -= 1/room_speed;

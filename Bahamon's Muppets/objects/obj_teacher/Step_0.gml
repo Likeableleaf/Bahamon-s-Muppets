@@ -46,7 +46,7 @@ if (canShoot == true) {
 // Check to see if greenlight is false
 	if (greenlight == false) {
 		// facing class
-		image_angle = 180;
+		image_angle = 0;
 		// Check if AI is moving
 		if(instance_exists(obj_simpleStudent)){
 			// Check if simple AI is moving
@@ -109,7 +109,7 @@ if (canShoot == true) {
 }//if its redlight
 
 //re-adjust image if greenlight
-if (greenlight){ image_angle=0};
+if (greenlight){ image_angle=180};
 
 
 
