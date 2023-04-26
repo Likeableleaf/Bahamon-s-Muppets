@@ -14,6 +14,7 @@ if instance_nearest(x,y,obj_simpleStudent).inDesk == true {
 			instance_nearest(x,y,obj_simpleStudent).speed = 6;
 			if(canPlay) {
 			audio_play_sound(Empty_kick2, 10, false)
+			canPlay = false
 			}
 			instance_create_layer(x+30,y+30,"Instances", obj_emptyDesk)
 			owner.object_index.hitsMade = owner.object_index.hitsMade + 1;

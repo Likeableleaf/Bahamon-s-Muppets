@@ -14,6 +14,7 @@ if instance_nearest(x,y,obj_studentInDesk).inDesk == true {
 			instance_nearest(x,y,obj_studentInDesk).speed = 6;
 			if(canPlay){
 			audio_play_sound(Empty_kick2, 10, false)
+			canPlay = true
 			}
 			//alarm[1] = 5
 			//obj_simpleStudent.x += 20

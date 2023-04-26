@@ -14,6 +14,7 @@ if instance_nearest(x,y,obj_Player).inDesk == true {
 			instance_nearest(x,y,obj_Player).speed = 6;
 			if(canPlay){
 			audio_play_sound(Empty_kick2, 10, false)
+			canPlay = false
 			}
 			//generate emptyDesk
 			instance_create_layer(x+10,y+10,"Instances", obj_emptyDesk)
