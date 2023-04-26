@@ -4,7 +4,7 @@
 alarm[0] = 10
 // Set owner
 owner = noone;
-
+canPlay = true
 //owner = instance_nearest(x,y,other).id
 buffer_time = 1/room_speed
 

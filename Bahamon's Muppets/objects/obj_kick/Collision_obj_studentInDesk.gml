@@ -12,7 +12,9 @@ if instance_nearest(x,y,obj_studentInDesk).inDesk == true {
 			instance_nearest(x,y,obj_studentInDesk).freeze = true;
 			instance_nearest(x,y,obj_studentInDesk).direction = point_direction(x, y, instance_nearest(x,y,obj_studentInDesk).x, instance_nearest(x,y,obj_studentInDesk).y);
 			instance_nearest(x,y,obj_studentInDesk).speed = 6;
+			if(canPlay){
 			audio_play_sound(Empty_kick2, 10, false)
+			}
 			//alarm[1] = 5
 			//obj_simpleStudent.x += 20
 			//obj_simpleStudent.y += 20

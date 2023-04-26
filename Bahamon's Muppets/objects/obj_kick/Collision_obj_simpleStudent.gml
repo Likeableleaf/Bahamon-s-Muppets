@@ -12,7 +12,9 @@ if instance_nearest(x,y,obj_simpleStudent).inDesk == true {
 			instance_nearest(x,y,obj_simpleStudent).freeze = true;
 			instance_nearest(x,y,obj_simpleStudent).direction = point_direction(x, y, instance_nearest(x,y,obj_simpleStudent).x, instance_nearest(x,y,obj_simpleStudent).y);
 			instance_nearest(x,y,obj_simpleStudent).speed = 6;
+			if(canPlay) {
 			audio_play_sound(Empty_kick2, 10, false)
+			}
 			instance_create_layer(x+30,y+30,"Instances", obj_emptyDesk)
 			owner.object_index.hitsMade = owner.object_index.hitsMade + 1;
 			// destroy kick
