@@ -9,13 +9,15 @@ case "gamepad discovered":                     // A game pad has been discovered
     var pad = async_load[? "pad_index"];       // Get the pad index value from the async_load map
     gamepad_set_axis_deadzone(pad, 0.5);       // Set the "deadzone" for the axis
     gamepad_set_button_threshold(pad, 0.1);    // Set the "threshold" for the triggers
-    if !(instance_exists(player[pad]))         // Check to see if an instance is associated with this pad index
+    if (!(instance_exists(player[pad])) && ((global.playerCap - global.playerCount) != 0) && global.menuOpen)         // Check to see if an instance is associated with this pad index and the game hasnt started and the player cap hasnt been reached
         {
         // Create a player object and assign it a pad number
-        player[pad] = instance_create_layer(64 + random(room_width - 128), 64 + random(room_height - 128), "Instances", obj_Player);
-        with (player[pad])
+        player[pad] = instance_create_layer(startLoc[global.playerCount], startLoc[global.playerCount+9], "Instances", obj_Player);
+        //update player count
+		global.playerCount++;
+		with (player[pad])
             {
-            image_index = instance_number(object_index);
+           // image_index = instance_number(object_index);
             pad_num = pad;
             }
         }

@@ -4,3 +4,8 @@
 //seconds = irandom_range(60,300)
 // For testing purposes
 seconds = 15
+
+global.started = false;
+global.menustartclosed = false;
+totalseconds = 0;
+totalminutes = 40;

@@ -1,10 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (image_index == 1 && 
+/*
+if (image_index == 1 && inDesk &&
 	(direction <= point_direction(x, y, instance_nearest(x,y,obj_studentInDesk).x, instance_nearest(x,y,obj_studentInDesk).y) + 35 || 
-	direction >= point_direction(x, y, instance_nearest(x,y,obj_studentInDesk).x, instance_nearest(x,y,obj_studentInDesk).y) - 35)) {
-	// Destroy simple student 
-	instance_destroy(obj_studentInDesk)
-	// Create crawling student AI if kicked out desk
-	instance_create_layer(x, y, "Instances", obj_studentCrawling)
+	direction >= point_direction(x, y, instance_nearest(x,y,obj_studentInDesk).x, instance_nearest(x,y,obj_studentInDesk).y) - 35) && 
+	instance_nearest(x,y,obj_studentInDesk).inDesk == true) {
+		 instance_nearest(x,y,obj_studentInDesk).inDesk = false;
+		 instance_create_layer(x+30,y+10,"Instances", obj_emptyDesk)
 }
+//*/
