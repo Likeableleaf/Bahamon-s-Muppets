@@ -14,17 +14,18 @@ if(!global.menuOpen){
 		//rotate sprite
 		image_angle = 0;
 		
-		//initialize + reset target list
-		ds_list_clear(targetList);
-		
 		//check if mousePlayer exists
 		if (instance_exists(obj_studentInDesk)) {
 			
 			//check if mousePlayer is moving
 			if (obj_studentInDesk.speed != 0) {
 				
-				//add mousePlayer to targetList
-				ds_list_add(targetList, obj_studentInDesk);
+				//check if target already in list
+				if (instance_find(obj_studentInDesk, i).speed != 0 && (ds_list_find_index(targetList, instance_find(obj_studentInDesk, i)) != -1)) {
+						
+					//add mousePlayer to targetList
+					ds_list_add(targetList, obj_studentInDesk);
+				}	
 			}
 		}
 		
@@ -34,6 +35,7 @@ if(!global.menuOpen){
 			//cycle through players
 			for (i = 0; i < instance_number(obj_Player)-1; i++) {
 					
+				//check if target is in list
 				if (instance_find(obj_Player, i).speed != 0 && (ds_list_find_index(targetList, instance_find(obj_Player, i)) != -1)) {
 						
 					//add player to targetList
@@ -48,6 +50,7 @@ if(!global.menuOpen){
 			//cycle through ai
 			for (i = 0; i < instance_number(obj_simpleStudent)-1; i++) {
 					
+				//check if target is in list
 				if (instance_find(obj_simpleStudent, i).speed != 0 && (ds_list_find_index(targetList, instance_find(obj_simpleStudent, i)) != -1)) {
 						
 					//add player to targetList
@@ -175,7 +178,14 @@ if (canShoot == true) {
 }//if its redlight//*/
 
 //re-adjust image if greenlight
-if (greenlight){ image_angle=180};
+if (greenlight) { 
+		
+	//initialize + reset target list
+	ds_list_clear(targetList);
+	
+	//rotate sprite
+	image_angle=180;
+}
 
 
 
