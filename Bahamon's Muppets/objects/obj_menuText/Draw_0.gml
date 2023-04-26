@@ -5,7 +5,7 @@ draw_set_valign(fa_right);
 
 draw_set_font(CountdownFont);
 
-draw_text_color(x, y, "Bahamons Muppets", c_purple,c_fuchsia,c_white,c_blue,1);
+draw_text_color(x+700, y+200, "Bahamons Muppets", c_purple,c_fuchsia,c_white,c_blue,1);
 
 draw_set_font(CountdownFont);
 
