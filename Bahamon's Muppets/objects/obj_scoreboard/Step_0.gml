@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 // Check if there is still time
+if(!global.menuOpen){
 if(seconds > 0) {
 	// Decrease time
 	seconds -= 1/room_speed
@@ -20,7 +21,7 @@ if(seconds > 0) {
 	} else {
 	seconds = irandom_range(20,50)
 	}
-}
+}}
 
 if(global.started && !global.menustartclosed){
 global.menustartclosed = true;

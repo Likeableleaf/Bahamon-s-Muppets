@@ -6,8 +6,74 @@
 		array_delete(numbAI,i,1)
 	}
 }*/
+
+//check that menu is closed
 if(!global.menuOpen){
-	if(instance_exists(obj_simpleStudent) and !instance_exists(obj_studentInDesk) and !instance_exists(obj_Player)){
+	if (!greenlight) {	
+		
+		//rotate sprite
+		image_angle = 0;
+		
+		//initialize + reset target list
+		ds_list_clear(targetList);
+		
+		//check if mousePlayer exists
+		if (instance_exists(obj_studentInDesk)) {
+			
+			//check if mousePlayer is moving
+			if (obj_studentInDesk.speed != 0) {
+				
+				//add mousePlayer to targetList
+				ds_list_add(targetList, obj_studentInDesk);
+			}
+		}
+		
+		//check if Players exist 
+		if (instance_exists(obj_Player)) {
+			
+			//cycle through players
+			for (i = 0; i < instance_number(obj_Player)-1; i++) {
+					
+				if (instance_find(obj_Player, i).speed != 0 && (ds_list_find_index(targetList, instance_find(obj_Player, i)) != -1)) {
+						
+					//add player to targetList
+					ds_list_add(targetList, instance_find(obj_Player, i));
+				}					
+			}
+		}
+		
+		//check if ai exist 
+		if (instance_exists(obj_simpleStudent)) {
+			
+			//cycle through ai
+			for (i = 0; i < instance_number(obj_simpleStudent)-1; i++) {
+					
+				if (instance_find(obj_simpleStudent, i).speed != 0 && (ds_list_find_index(targetList, instance_find(obj_simpleStudent, i)) != -1)) {
+						
+					//add player to targetList
+					ds_list_add(targetList, instance_find(obj_simpleStudent, i));
+				}					
+			}
+		}
+		
+		//check if can shoot
+		if (canShoot && (ds_list_find_index(targetList, 0) != undefined)) {
+			
+			// Create throwables
+			instance_create_layer(x, y, "Instances", obj_throwable);
+			obj_throwable.target = ds_list_find_index(targetList, 0).id;
+			
+			// Set direction of throwables
+			obj_throwable.direction = point_direction(x, y, ds_list_find_index(targetList, 0).x, ds_list_find_index(targetList, 0).y);
+			canShoot = false;
+			
+			//move to next in list 
+			ds_list_delete(targetList, 0);
+		}
+		
+	}
+	
+	/*if(instance_exists(obj_simpleStudent) and !instance_exists(obj_studentInDesk) and !instance_exists(obj_Player)){
 		simpStudentCount = instance_number(obj_simpleStudent)
 			if(simpStudentCount < 2 && simpStudentCount > 0){
 				global.playerNumber[0] = instance_nearest(x,y,obj_simpleStudent).playerNum;
@@ -28,11 +94,11 @@ if(!global.menuOpen){
 				global.playerNumber[0] = instance_nearest(x,y,obj_Player).playerNum;
 				instance_destroy(obj_teacher);
 			}
-	}
+	}//*/
 	
 }//when menu is closed
 
-if(greenlight == false) {
+//if(greenlight == false) {
 	
 	/*for(i=0; i<array_length(numbAI); ++i;) {
 		val = numbAI[i]
@@ -41,7 +107,7 @@ if(greenlight == false) {
 			instance_destroy(ai)
 		}
 	}*/
-	
+/*	
 if (canShoot == true) {
 // Check to see if greenlight is false
 	if (greenlight == false) {
@@ -62,7 +128,7 @@ if (canShoot == true) {
 				}
 				if(instance_exists(obj_simpleStudent)){
 					/*/// Create throwables
-					instance_create_layer(x, y, "Instances", obj_throwable)
+		/*			instance_create_layer(x, y, "Instances", obj_throwable)
 					obj_throwable.target = instance_nearest(x, y, obj_simpleStudent).id
 					// Set direction of throwables
 					obj_throwable.direction = point_direction(x, y, obj_simpleStudent.x, obj_simpleStudent.y)
@@ -106,7 +172,7 @@ if (canShoot == true) {
 		}
 		
 	}//can shoot
-}//if its redlight
+}//if its redlight//*/
 
 //re-adjust image if greenlight
 if (greenlight){ image_angle=180};
