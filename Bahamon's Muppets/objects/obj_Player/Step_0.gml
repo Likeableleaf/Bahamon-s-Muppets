@@ -69,6 +69,9 @@ if inDesk {
 } else if (!inDesk && buffer_time == 0)  {
 	buffer_time = 1;
 	sprite_index = spr_studentCrawl;
+} else if (obj_teacher.greenlight == false && !inDesk) {
+	//kill the ai simple student if teacher is in redlight and ai is out of desk
+		instance_destroy(instance_nearest(x,y,obj_Player));
 } else {
 	sprite_index = spr_studentCrawl;
 //instance_create_layer(x+30,y+10,"Instances", obj_emptyDesk)
