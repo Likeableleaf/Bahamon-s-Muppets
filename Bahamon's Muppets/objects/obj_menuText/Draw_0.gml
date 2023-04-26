@@ -7,12 +7,12 @@ draw_set_font(CountdownFont);
 
 draw_text_color(x+700, y+200, "Bahamons Muppets", c_purple,c_fuchsia,c_white,c_blue,1);
 
-draw_set_font(CountdownFont);
+draw_set_font(CountdownFont2);
 
-//draw_text_color(x, y +600,"You are a scientist!", c_black,c_black,c_black,c_black,1);
-//draw_text_color(x, y +620,"You invented a meatball raining cloud making machine!", c_black,c_black,c_black,c_black,1);
-//draw_text_color(x, y +640,"Sustain the city's and their stomachs, by raining meatballs on them!", c_black,c_black,c_black,c_black,1);
-//draw_text_color(x, y +660,"See how long you can sustain their hunger, before they riot with dissatisfaction!", c_black,c_black,c_black,c_black,1);
-//draw_text_color(x, y +680,"As they are pleasured by your gourmet raining cuisine, they elevate their town and", c_black,c_black,c_black,c_black,1);
-//draw_text_color(x, y +700,"evolve! With it comes bigger cities, and a bigger population. Can you forcast them", c_black,c_black,c_black,c_black,1);
-//draw_text_color(x, y +720,"longer happiness without them taking you for granted?", c_black,c_black,c_black,c_black,1);
+draw_text_color(x+400, y +600,"You are a student in Bahamon's programming class room!", c_black,c_black,c_black,c_black,1);
+draw_text_color(x+400, y +640,"You've heard how intense the class is, and bet your friends", c_black,c_black,c_black,c_black,1);
+draw_text_color(x+400, y +680,"you can last the longest! However, Dr. Bahamon says on your", c_black,c_black,c_black,c_black,1);
+draw_text_color(x+400, y +720,"first day, you all need to stay in your desks. and no one", c_black,c_black,c_black,c_black,1);
+draw_text_color(x+400, y +760,"ever said you can't be a muppet! get your friends out early", c_black,c_black,c_black,c_black,1);
+draw_text_color(x+400, y +800,"by getting them in trouble first!", c_black,c_black,c_black,c_black,1);
+draw_text_color(x+400, y +840,"How to play: Rotate with joistic/mouse and push/kick with space/A/X", c_black,c_black,c_black,c_black,1);

@@ -36,7 +36,12 @@ if (gamepad_button_check_pressed(pad_num, gp_face1) && !freeze)
 	image_index = 1//*/
 	// Set speed
 	if(inDesk){
+
 	instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick);
+
+	if (buffer_time > 0) then buffer_time -= 1/room_speed;
+	instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick)
+
 	kicksMade = kicksMade + 1;
 	instance_nearest(x, y, obj_kick).owner = id
 	instance_nearest(x, y, obj_kick).image_angle = image_angle

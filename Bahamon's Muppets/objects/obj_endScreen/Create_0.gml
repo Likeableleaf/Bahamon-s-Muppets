@@ -4,6 +4,7 @@ imageColor = c_white;
 imageColor1 = c_white;
 imageColor2 = c_white;
 imageColor3 = c_white;
+
 playerNum = global.playerNumber[0]
 
 switch(playerNum) {
