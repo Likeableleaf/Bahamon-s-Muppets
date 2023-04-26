@@ -47,11 +47,13 @@ if (gamepad_button_check_pressed(pad_num, gp_face1) && !freeze)
 } else {
 	if(speed != 0) {
 	// Slow down student
-	if(inDesk){
+	if(inDesk && speed < 0){
 	speed += 0.2
-	}else{
+	}else if (speed > 0) {
 	speed -= 0.2;
-	}}
+	}else if (speed > -0.1 && speed < 0.1)
+	speed = 0;	
+	}
 	// Set sprite to regular
 	image_index = 0
 }
