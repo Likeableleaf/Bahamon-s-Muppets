@@ -6,7 +6,7 @@ direction = point_direction(x, y, mouse_x, mouse_y)
 // Set the rotation of student to match mouse
 image_angle = point_direction(x, y, mouse_x, mouse_y) + -90
 // Check if space bar is pressed
-//if(global.menuOpen == false) {
+if(global.menuOpen == false) {
 	if (keyboard_check_pressed(vk_space)) {
 	// Set sprite to kick
 	//image_index = 1		// Set speed
@@ -32,7 +32,7 @@ image_angle = point_direction(x, y, mouse_x, mouse_y) + -90
 	image_index = 0
 }
 }
-//}
+}
 
 //swap between in desk and crawling
 if inDesk {
