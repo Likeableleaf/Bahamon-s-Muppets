@@ -1,13 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 if(instance_exists(obj_teacher)){
-	if (seconds < 10) and (obj_teacher.greenlight == true) {
+	/*if (seconds < 10) and (obj_teacher.greenlight == true) {
 		draw_set_color(c_green)
 	    draw_text(obj_teacher.x+40, obj_teacher.y, string(seconds));
 	} else if (seconds < 10) and (obj_teacher.greenlight == false) {
 		draw_set_color(c_red)
 		draw_text(obj_teacher.x+40, obj_teacher.y, string(seconds));
-	}
+	}*/
 	//else if minutes < 10 {
 	  //  draw_text(8, 88, "0" + string(minutes) + " : " + string(seconds));
 	//} else if seconds < 10 {
@@ -27,9 +27,11 @@ if(instance_exists(obj_teacher)){
 	} else {
 		draw_text(8, 88, string(totalminutes) + " : " + string(totalseconds));
 	}
-	if (obj_teacher.greenlight == false) {
-		draw_circle_colour(obj_teacher.x+800, obj_teacher.y+20, 40, c_red, c_red, false);
-	} else {
+	if (obj_teacher.greenlight == true and seconds > 10) {
 		draw_circle_colour(obj_teacher.x+800, obj_teacher.y+20, 40, c_green, c_green, false);
+	} else if (seconds < 10) and (obj_teacher.greenlight == true) {
+		draw_circle_colour(obj_teacher.x+800, obj_teacher.y+20, 40, c_yellow, c_yellow, false);
+	} else {
+		draw_circle_colour(obj_teacher.x+800, obj_teacher.y+20, 40, c_red, c_red, false);
 	}
 }
