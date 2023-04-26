@@ -19,7 +19,7 @@ var h_point = gamepad_axis_value(pad_num, gp_axislv);
 // Variable to hold left stick vertical rotation
 var v_point = -gamepad_axis_value(pad_num, gp_axislh);
 // Check if left stick is moving
-if ((h_point != 0) || (v_point != 0))
+if ((h_point != 0) || (v_point != 0) && !freeze)
     {
     var pdir = point_direction(0, 0, h_point, v_point);
     var dif = angle_difference(pdir, image_angle);
@@ -30,7 +30,7 @@ if ((h_point != 0) || (v_point != 0))
 
 if(global.menuOpen == false) {
 // Check if 'A' button pressed
-if gamepad_button_check_pressed(pad_num, gp_face1)
+if (gamepad_button_check_pressed(pad_num, gp_face1) && !freeze)
     {
 	/*// Set sprite to kick
 	image_index = 1//*/
@@ -56,6 +56,11 @@ if gamepad_button_check_pressed(pad_num, gp_face1)
 	image_index = 0
 }
 }
+
+if (buffer_time == 0) {
+	freeze = false;
+}
+
 //swap between in desk and crawling
 if inDesk {
 	sprite_index = spr_studentInDeskV1;

@@ -6,6 +6,7 @@ direction = 0
 image_angle = -90
 buffer_time = 0;
 inDesk = false;
+freeze = false;
 
 //replaceColor = (math.random_range(0,255), math.random_range(0,255), math.random_range(0,255));
 //milestone tracking:
@@ -18,31 +19,31 @@ playerNum = global.playerCount;
 
 //set player color
 switch(playerNum) {
-    case 0:
+    case 1:
         imageColor = c_lime;
         break;
-    case 1:
+    case 2:
         imageColor = c_red;
         break;
-    case 2:
+    case 3:
         imageColor = c_orange;
         break;
-    case 3:
+    case 4:
         imageColor = c_olive;
         break;
-    case 4:
+    case 5:
         imageColor = c_blue;
         break;
-    case 5:
+    case 6:
         imageColor = c_purple;
         break;
-    case 6:
+    case 7:
         imageColor = c_fuchsia;
         break;
-    case 7:
+    case 8:
         imageColor = c_teal;
         break;
-    case 8:
+    case 9:
         imageColor = c_aqua;
         break;
 }

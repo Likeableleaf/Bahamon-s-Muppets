@@ -30,6 +30,8 @@ if (inDesk) {
 				}
 			}
 			
+			
+			
 			//check if controller player exists and compare closest
 			if (instance_exists(obj_Player)) {
 				
@@ -277,5 +279,10 @@ if (place_meeting(x,y+vsp,instance_nearest(x,y,obj_simpleStudent)))
 	
 }
 y = y + vsp;
+
+
+if (buffer_time == 0) {
+	freeze = false;
+}
 
 

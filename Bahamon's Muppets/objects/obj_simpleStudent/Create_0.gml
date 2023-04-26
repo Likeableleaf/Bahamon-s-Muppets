@@ -9,6 +9,7 @@ buffer_time = 0;
 inDesk = false;
 chosenID = noone;
 hitsMade = 0;
+freeze = false;
 
 hsp = 0;
 vsp = 0;
