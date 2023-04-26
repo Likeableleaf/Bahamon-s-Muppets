@@ -21,7 +21,7 @@ if(!global.menuOpen){
 			if (obj_studentInDesk.speed != 0) {
 				
 				//check if target already in list
-				if (instance_find(obj_studentInDesk, i).speed != 0 && (ds_list_find_index(targetList, instance_find(obj_studentInDesk, i)) != -1)) {
+				if (obj_studentInDesk.speed != 0 && (ds_list_find_index(targetList, obj_studentInDesk) != -1)) {
 						
 					//add mousePlayer to targetList
 					ds_list_add(targetList, obj_studentInDesk);
