@@ -1,13 +1,13 @@
 /// @description Insert description here
 // Set direction of student to match mouse
-
+if ( !freeze) {
 direction = point_direction(x, y, mouse_x, mouse_y)
-
+}
 // Set the rotation of student to match mouse
 image_angle = point_direction(x, y, mouse_x, mouse_y) + -90
 // Check if space bar is pressed
-if(global.menuOpen == false && !freeze) {
-	if (keyboard_check_pressed(vk_space)) {
+if(global.menuOpen == false) {
+	if (keyboard_check_pressed(vk_space) && !freeze) {
 	// Set sprite to kick
 	//image_index = 1		// Set speed
 		if(inDesk){
