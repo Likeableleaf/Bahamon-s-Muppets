@@ -36,7 +36,7 @@ if (gamepad_button_check_pressed(pad_num, gp_face1) && !freeze)
 	image_index = 1//*/
 	// Set speed
 	if(inDesk){
-	instance_create_layer(x,y,"Instances",obj_kick)
+	instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick);
 	kicksMade = kicksMade + 1;
 	obj_kick.owner = id
 	obj_kick.image_angle = image_angle
