@@ -45,7 +45,7 @@ if instance_nearest(x,y,obj_simpleStudent).inDesk == true {
 			//obj_simpleStudent.x += 20
 		//obj_simpleStudent.y += 20
 		//generate emptyDesk
-		instance_create_layer(x+10,y+10,"Instances", obj_simpleStudent)
+		instance_create_layer(x+10,y+10,"Instances", obj_emptyDesk)
 		// destroy kick
 		instance_destroy()
 } else {
