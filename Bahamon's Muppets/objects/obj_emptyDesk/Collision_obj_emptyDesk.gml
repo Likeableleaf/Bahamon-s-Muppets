@@ -38,4 +38,7 @@ if(calcOther.id != id)
 	
 		}
 }*/
+if(canPlay) {
 audio_play_sound(Desk_crashing2, 10, false)
+canPlay = false
+}
