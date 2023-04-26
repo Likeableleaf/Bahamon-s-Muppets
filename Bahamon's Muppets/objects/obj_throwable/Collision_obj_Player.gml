@@ -5,9 +5,10 @@ if instance_nearest(x,y,obj_Player).inDesk == true {
 		//change ai state
 		instance_nearest(x,y,obj_Player).inDesk = false;
 		// boot player
-		//instance_nearest(x,y,obj_simpleStudent).direction = point_direction(x, y, instance_nearest(x,y,obj_simpleStudent).x, instance_nearest(x,y,obj_simpleStudent).y)
-		//instance_nearest(x,y,obj_simpleStudent).speed = 2;
-		//obj_simpleStudent.x += 20
+			instance_nearest(x,y,obj_Player).freeze = true;
+			instance_nearest(x,y,obj_Player).direction = point_direction(x, y, instance_nearest(x,y,obj_Player).x, instance_nearest(x,y,obj_Player).y);
+			instance_nearest(x,y,obj_Player).speed = 6;
+			//obj_simpleStudent.x += 20
 		//obj_simpleStudent.y += 20
 		//generate emptyDesk
 		instance_create_layer(x+10,y+10,"Instances", obj_emptyDesk)

@@ -150,7 +150,7 @@ if (inDesk) {
 			}
 		} 
 	}
-} else if(inDesk == false) {
+} else if(inDesk == false && !freeze) {
 		
 	//instance_nearest(x,y,obj_simpleStudent).imageColor = imageColor    what is this line doing?
 		
