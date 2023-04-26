@@ -10,6 +10,7 @@ if instance_nearest(x,y,obj_studentInDesk).inDesk == true {
 			instance_nearest(x,y,obj_studentInDesk).freeze = true;
 			instance_nearest(x,y,obj_studentInDesk).direction = point_direction(x, y, instance_nearest(x,y,obj_studentInDesk).x, instance_nearest(x,y,obj_studentInDesk).y);
 			instance_nearest(x,y,obj_studentInDesk).speed = 2;
+			audio_play_sound(Thowing_object_nohit, 10, false)
 			//obj_simpleStudent.x += 20
 		//obj_simpleStudent.y += 20
 		//generate emptyDesk
