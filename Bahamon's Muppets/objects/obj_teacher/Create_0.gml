@@ -5,7 +5,7 @@ greenlight = true
 canShoot = true
 alarm[0] = 1
 temp = 0
-/*
+//
 simpStudentCount = 0;
 stnInDeskCount = 0;
 playerObjCount = 0;//*/

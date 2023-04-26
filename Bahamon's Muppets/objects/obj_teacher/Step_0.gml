@@ -81,7 +81,10 @@ if(!global.menuOpen){
 		}
 		
 		//check if can shoot
-		if (canShoot && (ds_list_size(target_list) != 0)) {
+		if (canShoot && (ds_list_size(target_list) != 0) && (instance_exists(ds_list_find_value(target_list, 0)))) {
+			
+			//change sprite to throw
+			image_index = 1;
 			
 			// Create throwables
 			instance_create_layer(x, y, "Instances", obj_throwable);
@@ -93,6 +96,10 @@ if(!global.menuOpen){
 			
 			//move to next in list 
 			ds_list_delete(target_list, 0);
+		} else {
+			
+			///change sprite to standing still
+			image_index = 0;
 		}
 	}
 }
