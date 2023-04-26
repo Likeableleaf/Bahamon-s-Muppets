@@ -9,74 +9,9 @@
 
 //check that menu is closed
 if(!global.menuOpen){
-	if (!greenlight) {	
-		
-		//rotate sprite
-		image_angle = 0;
-		
-		//check if mousePlayer exists
-		if (instance_exists(obj_studentInDesk)) {
-			
-			//check if mousePlayer is moving
-			if (obj_studentInDesk.speed != 0) {
-				
-				//check if target already in list
-				if (obj_studentInDesk.speed != 0 && (ds_list_find_index(targetList, obj_studentInDesk) != -1)) {
-						
-					//add mousePlayer to targetList
-					ds_list_add(targetList, obj_studentInDesk);
-				}	
-			}
-		}
-		
-		//check if Players exist 
-		if (instance_exists(obj_Player)) {
-			
-			//cycle through players
-			for (i = 0; i < instance_number(obj_Player)-1; i++) {
-					
-				//check if target is in list
-				if (instance_find(obj_Player, i).speed != 0 && (ds_list_find_index(targetList, instance_find(obj_Player, i)) != -1)) {
-						
-					//add player to targetList
-					ds_list_add(targetList, instance_find(obj_Player, i));
-				}					
-			}
-		}
-		
-		//check if ai exist 
-		if (instance_exists(obj_simpleStudent)) {
-			
-			//cycle through ai
-			for (i = 0; i < instance_number(obj_simpleStudent)-1; i++) {
-					
-				//check if target is in list
-				if (instance_find(obj_simpleStudent, i).speed != 0 && (ds_list_find_index(targetList, instance_find(obj_simpleStudent, i)) != -1)) {
-						
-					//add player to targetList
-					ds_list_add(targetList, instance_find(obj_simpleStudent, i));
-				}					
-			}
-		}
-		
-		//check if can shoot
-		if (canShoot && (ds_list_find_index(targetList, 0) != undefined)) {
-			
-			// Create throwables
-			instance_create_layer(x, y, "Instances", obj_throwable);
-			obj_throwable.target = ds_list_find_index(targetList, 0).id;
-			
-			// Set direction of throwables
-			obj_throwable.direction = point_direction(x, y, ds_list_find_index(targetList, 0).x, ds_list_find_index(targetList, 0).y);
-			canShoot = false;
-			
-			//move to next in list 
-			ds_list_delete(targetList, 0);
-		}
-		
-	}
 	
-	/*if(instance_exists(obj_simpleStudent) and !instance_exists(obj_studentInDesk) and !instance_exists(obj_Player)){
+	//win conditions
+	if(instance_exists(obj_simpleStudent) and !instance_exists(obj_studentInDesk) and !instance_exists(obj_Player)){
 		simpStudentCount = instance_number(obj_simpleStudent)
 			if(simpStudentCount < 2 && simpStudentCount > 0){
 				global.playerNumber[0] = instance_nearest(x,y,obj_simpleStudent).playerNum;
@@ -99,7 +34,68 @@ if(!global.menuOpen){
 			}
 	}//*/
 	
-}//when menu is closed
+	if (!greenlight) {	
+		
+		//rotate sprite
+		image_angle = 0;
+		
+		//check if mousePlayer exists
+		if (instance_exists(obj_studentInDesk)) {
+			
+			//check if mousePlayer is moving + not already in list
+			if ((obj_studentInDesk.speed != 0) && (ds_list_find_index(target_list, obj_studentInDesk) == -1)) {
+						
+				//add mousePlayer to targetList
+				ds_list_add(target_list, obj_studentInDesk.id);	
+			}
+		}
+		
+		//check if Players exist 
+		if (instance_exists(obj_Player)) {
+			
+			//cycle through players
+			for (i = 0; i < instance_number(obj_Player); i++) {
+					
+				//check if target is in list
+				if (instance_find(obj_Player, i).speed != 0 && (ds_list_find_index(target_list, instance_find(obj_Player, i)) == -1)) {
+						
+					//add player to targetList
+					ds_list_add(target_list, instance_find(obj_Player, i));
+				}					
+			}
+		}
+		
+		//check if ai exist 
+		if (instance_exists(obj_simpleStudent)) {
+			
+			//cycle through ai
+			for (i = 0; i < instance_number(obj_simpleStudent); i++) {
+					
+				//check if target is in list
+				if (instance_find(obj_simpleStudent, i).speed != 0 && (ds_list_find_index(target_list, instance_find(obj_simpleStudent, i)) == -1)) {
+						
+					//add player to targetList
+					ds_list_add(target_list, instance_find(obj_simpleStudent, i));
+				}					
+			}
+		}
+		
+		//check if can shoot
+		if (canShoot && (ds_list_size(target_list) != 0)) {
+			
+			// Create throwables
+			instance_create_layer(x, y, "Instances", obj_throwable);
+			instance_nearest(x, y, obj_throwable).target = ds_list_find_value(target_list, 0);
+			
+			// Set direction of throwables
+			instance_nearest(x, y, obj_throwable).direction = point_direction(x, y, ds_list_find_value(target_list, 0).x, ds_list_find_value(target_list, 0).y);
+			canShoot = false;
+			
+			//move to next in list 
+			ds_list_delete(target_list, 0);
+		}
+	}
+}
 
 //if(greenlight == false) {
 	
@@ -181,7 +177,7 @@ if (canShoot == true) {
 if (greenlight) { 
 		
 	//initialize + reset target list
-	ds_list_clear(targetList);
+	ds_list_clear(target_list);
 	
 	//rotate sprite
 	image_angle=180;

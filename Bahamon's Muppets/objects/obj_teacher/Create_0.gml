@@ -9,7 +9,7 @@ temp = 0
 simpStudentCount = 0;
 stnInDeskCount = 0;
 playerObjCount = 0;//*/
-targetList = ds_list_create();
+target_list = ds_list_create();
 
 //numbAI = []
 
