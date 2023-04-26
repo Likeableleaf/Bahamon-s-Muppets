@@ -237,7 +237,7 @@ if (buffer_time > 0) then buffer_time -= 1/room_speed;
 
 // ALL CODE BELOW IS FOR CLAMPING BORDERS
 x = clamp(x, sprite_width/2, room_width-sprite_width/2)
-y = clamp(y, sprite_height/2, room_height-sprite_height/2 + 30)
+y = clamp(y, sprite_height/2+65, room_height-sprite_height)
 
 
 //BELOW ARE PHYSICS FOR PASSIVE COLLISIONS BETWEEN OTHER SIMPLE STUDENTS********************
