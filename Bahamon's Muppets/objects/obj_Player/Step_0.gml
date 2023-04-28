@@ -22,9 +22,9 @@ var v_point = -gamepad_axis_value(pad_num, gp_axislh);
 if ((h_point != 0) || (v_point != 0) && !freeze)
     {
     var pdir = point_direction(0, 0, h_point, v_point);
-    var dif = angle_difference(pdir, image_angle);
-    image_angle += median(-20, dif, 20);
+    var dif = angle_difference(pdir, direction)-90;
 	direction += median(-20, dif, 20);
+	image_angle = (direction -90);
     }
 
 
@@ -37,28 +37,33 @@ if (gamepad_button_check_pressed(pad_num, gp_face1) && !freeze)
 	// Set speed
 	if(inDesk){
 
-	//instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick);
+		//instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick);
 
-	if (buffer_time > 0) then buffer_time -= 1/room_speed;
-	instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick)
+		if (buffer_time > 0) then buffer_time -= 1/room_speed;
+		
+		instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick)
 
-	kicksMade = kicksMade + 1;
-	instance_nearest(x, y, obj_kick).owner = id
-	instance_nearest(x, y, obj_kick).image_angle = image_angle
-	speed = -4
-	}else{
-	speed = 4;
+		kicksMade = kicksMade + 1;
+		instance_nearest(x, y, obj_kick).owner = id
+		instance_nearest(x, y, obj_kick).image_angle = image_angle
+		speed = -4
+	} else {
+		speed = 4;
 	}
 } else {
 	if(speed != 0) {
-	// Slow down student
-	if(inDesk && speed < 0){
-	speed += 0.2
-	}else if (speed > 0) {
-	speed -= 0.2;
-	}else if (speed > -0.1 && speed < 0.1)
-	speed = 0;	
-	}
+	
+		// Slow down student
+		if(inDesk && speed < 0){
+			speed += 0.2
+		}else if (speed > 0) {
+			
+			speed -= 0.2;
+		}else if (speed > -0.1 && speed < 0.1)
+			
+			speed = 0;	
+		}
+	
 	// Set sprite to regular
 	image_index = 0
 }
