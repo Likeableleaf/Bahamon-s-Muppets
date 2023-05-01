@@ -6,6 +6,8 @@ for (var i = 0; i < instance_number(obj_simpleStudent); ++i;)
 maxVal = array_length(ais)
 //randomai = random_range(0, maxVal)
 //chosenaiID = ais[randomai]
+if(global.menuOpen == false) {
+// Check if 'A' button pressed
 
 if (inDesk) {
 	if (canKick == true && (instance_exists(obj_studentInDesk) || instance_exists(obj_Player) || instance_exists(obj_simpleStudent))) {
@@ -209,6 +211,7 @@ if (inDesk) {
 //*/		alarm[1] = 60
 //*/	}
 //*/} //*/ 	
+}
 if(speed != 0) {
 	// Slow down student
 	speed -= 0.2
