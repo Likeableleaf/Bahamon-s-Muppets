@@ -10,7 +10,7 @@ if(global.menuOpen == false) {
 // Check if 'A' button pressed
 
 if (inDesk) {
-	if (canKick == true && (instance_exists(obj_studentInDesk) || instance_exists(obj_Player) || instance_exists(obj_simpleStudent))) {
+	if ((instance_exists(obj_studentInDesk) || instance_exists(obj_Player) || instance_exists(obj_simpleStudent))) {
 		
 		//check if safe
 		if(obj_teacher.greenlight == true) {
@@ -33,7 +33,7 @@ if (inDesk) {
 			}
 			
 			
-			
+		//targeting decision
 			//check if controller player exists and compare closest
 			if (instance_exists(obj_Player)) {
 				
@@ -108,6 +108,7 @@ if (inDesk) {
 				target = noone;
 			}
 			
+		//actions
 			//if there is a closest entity
 			if (target != noone) {
 				// Generate direction towards other students
@@ -123,10 +124,20 @@ if (inDesk) {
 					image_angle = point_direction(x, y, px, py) + -90;
 		
 					//generate kick
-					instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
-					obj_kick.owner = id
-					obj_kick.image_angle = image_angle
-			
+					if (canKick) {
+						instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+						obj_kick.owner = id
+						obj_kick.image_angle = image_angle
+						
+						// Set speed
+						speed = 4
+										
+						// Set canKick to false
+						canKick = false
+		
+						// Reset canKick timer
+						alarm[1] = 60
+					}
 				
 				} else {
 			
@@ -134,21 +145,21 @@ if (inDesk) {
 					image_angle = point_direction(x, y, px, py) + -270;
 					direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
 			
-					// Set direction to the generated direction
-					instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
-					instance_nearest(x, y, obj_kick).owner = id
-					instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
-			
+					if (canKick) {
+						// Set direction to the generated direction
+						instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+						instance_nearest(x, y, obj_kick).owner = id
+						instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
+						// Set speed
+						speed = 4
+										
+						// Set canKick to false
+						canKick = false
+		
+						// Reset canKick timer
+						alarm[1] = 60
+					}
 				}
-		
-				// Set speed
-				speed = 4
-		
-				// Set canKick to false
-				canKick = false
-		
-				// Reset canKick timer
-				alarm[1] = 60
 			}
 		} 
 	}
