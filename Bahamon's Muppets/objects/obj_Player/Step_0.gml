@@ -45,7 +45,7 @@ if (gamepad_button_check_pressed(pad_num, gp_face1) && !freeze)
 
 		kicksMade = kicksMade + 1;
 		instance_nearest(x, y, obj_kick).owner = id
-		instance_nearest(x, y, obj_kick).image_angle = phy_rotation
+		instance_nearest(x, y, obj_kick).phy_rotation = phy_rotation
 		//speed = -4
 		physics_apply_impulse(x, y, lengthdir_x(500, dire), lengthdir_y(500, dire));
 	} else {
@@ -53,7 +53,7 @@ if (gamepad_button_check_pressed(pad_num, gp_face1) && !freeze)
 		physics_apply_impulse(x, y, lengthdir_x(500, dire), lengthdir_y(500, dire));
 	}
 } else {
-	if(speed != 0) {
+	/*if(speed != 0) {
 	
 		// Slow down student
 		if(inDesk && speed < 0){
@@ -65,7 +65,7 @@ if (gamepad_button_check_pressed(pad_num, gp_face1) && !freeze)
 			
 			speed = 0;	
 		}
-	
+	*/
 	// Set sprite to regular
 	image_index = 0
 }

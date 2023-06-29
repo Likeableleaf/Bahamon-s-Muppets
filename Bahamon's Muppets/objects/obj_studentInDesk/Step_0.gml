@@ -13,7 +13,7 @@ if(global.menuOpen == false) {
 		if(inDesk){
 			instance_create_layer(x+lengthdir_x(32,dire),y+lengthdir_y(32,dire),"Instances",obj_kick);
 			obj_kick.owner = id
-			obj_kick.image_angle = phy_rotation
+			obj_kick.phy_rotation = phy_rotation
 			kicksMade = kicksMade + 1;
 			//speed = -4
 			physics_apply_impulse(x, y, -lengthdir_x(500, dire), -lengthdir_y(500, dire));

@@ -5,7 +5,7 @@ inDesk = true
 speed = 0;
 bailSavesMade = bailSavesMade +1;
 instance_destroy(instance_nearest(x,y,obj_emptyDesk));
-}else if (inDesk) {
+} /*else if (inDesk) {
 	instance_nearest(x,y,obj_emptyDesk).direction = point_direction(x, y, instance_nearest(x,y,obj_emptyDesk).x, instance_nearest(x,y,obj_emptyDesk).y)
 	instance_nearest(x,y,obj_emptyDesk).speed = 2;
-}
+}*/
