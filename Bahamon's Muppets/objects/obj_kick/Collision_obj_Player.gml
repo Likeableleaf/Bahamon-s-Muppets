@@ -10,8 +10,10 @@ if instance_nearest(x,y,obj_Player).inDesk == true {
 			instance_nearest(x,y,obj_Player).inDesk = false;
 			// boot player
 			instance_nearest(x,y,obj_Player).freeze = true;
-			instance_nearest(x,y,obj_Player).direction = point_direction(x, y, instance_nearest(x,y,obj_Player).x, instance_nearest(x,y,obj_Player).y);
-			instance_nearest(x,y,obj_Player).speed = 6;
+			dire = point_direction(x, y, instance_nearest(x,y,obj_Player).x, instance_nearest(x,y,obj_Player).y);
+			with (other) {
+				physics_apply_impulse(x, y, lengthdir_x(750, dire), lengthdir_y(750, dire));
+			}
 			if(canPlay){
 			audio_play_sound(Empty_kick2, 10, false)
 			canPlay = false

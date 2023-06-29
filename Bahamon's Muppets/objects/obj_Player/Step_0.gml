@@ -24,7 +24,7 @@ if ((h_point != 0) || (v_point != 0) && !freeze)
     var pdir = point_direction(0, 0, h_point, v_point);
     var dif = angle_difference(pdir, dire)-90;
 	dire += median(-20, dif, 20);
-	phy_rotation = (dire -90);
+	phy_rotation = -(dire -90);
     }
 
 
