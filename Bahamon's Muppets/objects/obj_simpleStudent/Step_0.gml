@@ -121,13 +121,13 @@ if (inDesk) {
 		
 					//points to kick player
 					dire = point_direction(x, y, px, py) + 180;	
-					image_angle = point_direction(x, y, px, py) + -90;
+					phy_rotation = point_direction(x, y, px, py) + -90;
 		
 					//generate kick
 					if (canKick) {
-						instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+						instance_create_layer(x-lengthdir_x(32,dire),y-lengthdir_y(32,dire),"Instances",obj_kick);
 						obj_kick.owner = id
-						obj_kick.image_angle = image_angle
+						obj_kick.image_angle = phy_rotation
 						
 						// Set speed
 						//speed = 4
@@ -143,14 +143,14 @@ if (inDesk) {
 				} else {
 			
 					//point to move
-					image_angle = point_direction(x, y, px, py) + -270;
+					phy_rotation = -(point_direction(x, y, px, py) + -270);
 					dire = point_direction(x, y, px, py) //+ irandom_range(-20,20)
 			
 					if (canKick) {
 						// Set direction to the generated direction
 						instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
 						instance_nearest(x, y, obj_kick).owner = id
-						instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
+						instance_nearest(x, y, obj_kick).image_angle = phy_rotation //*/
 						// Set speed
 						//speed = 4
 						physics_apply_impulse(x, y, lengthdir_x(500, dire), lengthdir_y(500, dire));
@@ -183,7 +183,7 @@ if (inDesk) {
 	dire = point_direction(x, y, dx, dy)
 		
 	// Set the rotation of ai match direction
-	image_angle = point_direction(x, y, dx, dy) + -90
+	phy_rotation = -(point_direction(x, y, dx, dy) + -90)
 	
 	// Set speed
 	//speed = 1
@@ -258,7 +258,7 @@ if (buffer_time > 0) then buffer_time -= 1/room_speed;
 x = clamp(x, sprite_width/2, room_width-sprite_width/2)
 y = clamp(y, sprite_height/2+80, room_height-sprite_height)
 
-
+/*
 //BELOW ARE PHYSICS FOR PASSIVE COLLISIONS BETWEEN OTHER SIMPLE STUDENTS********************
 
 var knockback_strength = 10;
@@ -301,5 +301,5 @@ y = y + vsp;
 if (buffer_time == 0) {
 	freeze = false;
 }
-
+*/
 
