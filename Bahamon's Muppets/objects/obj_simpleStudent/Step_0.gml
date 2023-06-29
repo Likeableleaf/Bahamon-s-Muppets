@@ -120,7 +120,7 @@ if (inDesk) {
 				if (distance_to_object(instance_nearest(x,y,target)) <= 5) {
 		
 					//points to kick player
-					direction = point_direction(x, y, px, py) + 180	
+					dire = point_direction(x, y, px, py) + 180;	
 					image_angle = point_direction(x, y, px, py) + -90;
 		
 					//generate kick
@@ -130,7 +130,8 @@ if (inDesk) {
 						obj_kick.image_angle = image_angle
 						
 						// Set speed
-						speed = 4
+						//speed = 4
+						physics_apply_impulse(x, y, lengthdir_x(500, dire), lengthdir_y(500, dire));
 										
 						// Set canKick to false
 						canKick = false
@@ -143,7 +144,7 @@ if (inDesk) {
 			
 					//point to move
 					image_angle = point_direction(x, y, px, py) + -270;
-					direction = point_direction(x, y, px, py) //+ irandom_range(-20,20)
+					dire = point_direction(x, y, px, py) //+ irandom_range(-20,20)
 			
 					if (canKick) {
 						// Set direction to the generated direction
@@ -151,8 +152,9 @@ if (inDesk) {
 						instance_nearest(x, y, obj_kick).owner = id
 						instance_nearest(x, y, obj_kick).image_angle = image_angle //*/
 						// Set speed
-						speed = 4
-										
+						//speed = 4
+						physics_apply_impulse(x, y, lengthdir_x(500, dire), lengthdir_y(500, dire));
+						
 						// Set canKick to false
 						canKick = false
 		
@@ -178,13 +180,14 @@ if (inDesk) {
 	dy = instance_nearest(x,y,obj_emptyDesk).y;
 	
 	//point to emptyDesk
-	direction = point_direction(x, y, dx, dy)
+	dire = point_direction(x, y, dx, dy)
 		
 	// Set the rotation of ai match direction
 	image_angle = point_direction(x, y, dx, dy) + -90
 	
 	// Set speed
-	speed = 1
+	//speed = 1
+	physics_apply_impulse(x, y, lengthdir_x(500, dire), lengthdir_y(500, dire));
 	//instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick);
 	//obj_kick.owner = id
 	//obj_kick.image_angle = image_angle
@@ -223,11 +226,11 @@ if (inDesk) {
 //*/	}
 //*/} //*/ 	
 }
-if(speed != 0) {
+/*if(speed != 0) {
 	// Slow down student
 	speed -= 0.2
 }
-
+1*/
 //swap between in desk and crawling
 if inDesk {
 	sprite_index = spr_studentInDeskV1;

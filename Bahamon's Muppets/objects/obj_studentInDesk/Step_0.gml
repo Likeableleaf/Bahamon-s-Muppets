@@ -1,7 +1,7 @@
 /// @description Insert description here
 // Set direction of student to match mouse
 if ( !freeze) {
-direction = point_direction(x, y, mouse_x, mouse_y)
+dire = point_direction(x, y, mouse_x, mouse_y)
 }
 // Set the rotation of student to match mouse
 image_angle = point_direction(x, y, mouse_x, mouse_y) + -90
@@ -11,16 +11,19 @@ if(global.menuOpen == false) {
 	// Set sprite to kick
 	//image_index = 1		// Set speed
 		if(inDesk){
-			instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick);
+			instance_create_layer(x+lengthdir_x(32,dire),y+lengthdir_y(32,dire),"Instances",obj_kick);
 			obj_kick.owner = id
 			obj_kick.image_angle = image_angle
 			kicksMade = kicksMade + 1;
-			speed = -4
+			//speed = -4
+			physics_apply_impulse(x, y, -lengthdir_x(500, dire), -lengthdir_y(500, dire));
 	}else{
-	speed = 4;
+	//speed = 4;
+	
+	physics_apply_impulse(x, y, lengthdir_x(500, dire), lengthdir_y(500, dire));
 	}
 	
-} else {
+}/* else {
 	if(speed != 0) {
 	// Slow down student
 	if(inDesk){
@@ -31,7 +34,7 @@ if(global.menuOpen == false) {
 	// Set sprite to regular
 	image_index = 0
 }
-}
+}*/
 }
 
 //swap between in desk and crawling
