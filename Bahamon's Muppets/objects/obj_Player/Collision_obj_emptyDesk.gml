@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (!inDesk && buffer_time == 0) {
+if (!inDesk && !freeze) {
 inDesk = true
 bailSavesMade = bailSavesMade +1;
 //image_angle += 180;
