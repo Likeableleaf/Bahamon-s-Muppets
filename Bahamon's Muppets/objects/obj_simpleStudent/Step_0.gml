@@ -117,8 +117,10 @@ if (inDesk) {
 				py = target.y;
 		
 				// checks if player is in range
-				if (distance_to_object(instance_nearest(x,y,target)) <= 5) {
-		
+				//distanceToObject = distance_to_object(instance_nearest(x,y,target))
+				distanceToObject = point_distance(x,y,px,py)
+				//if (distanceToObject <= 999999.999989999986) {
+				if (distanceToObject <= 120) {
 					//points to kick player
 					dire = point_direction(x, y, px, py) + 180;	
 					phy_rotation = point_direction(x, y, px, py) + -90;
