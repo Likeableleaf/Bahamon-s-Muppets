@@ -190,7 +190,9 @@ if (inDesk) {
 	
 	// Set speed
 	//speed = 1
-	physics_apply_impulse(x, y, lengthdir_x(500, dire), lengthdir_y(500, dire));
+	//physics_apply_impulse(x, y, lengthdir_x(500, dire), lengthdir_y(500, dire));
+	phy_position_x += lengthdir_x(5,dire)
+	phy_position_y += lengthdir_y(5,dire)
 	//instance_create_layer(x+lengthdir_x(32,direction),y+lengthdir_y(32,direction),"Instances",obj_kick);
 	//obj_kick.owner = id
 	//obj_kick.image_angle = image_angle
