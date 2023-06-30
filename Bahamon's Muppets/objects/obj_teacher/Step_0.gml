@@ -93,9 +93,9 @@ if(!global.menuOpen){
 			
 			// Set direction of throwables
 			//instance_nearest(x, y, obj_throwable).direction = point_direction(x, y, ds_list_find_value(target_list, 0).x, ds_list_find_value(target_list, 0).y);
-			instance_nearest(x, y, obj_throwable).dire = point_direction(x, y, ds_list_find_value(target_list, 0).x, ds_list_find_value(target_list, 0).y);
+			instance_nearest(x, y, obj_throwable).direction = point_direction(x, y, ds_list_find_value(target_list, 0).x, ds_list_find_value(target_list, 0).y);
 			with (instance_nearest(x, y, obj_throwable)) {
-				physics_apply_impulse(x, y, lengthdir_x(750, dire), lengthdir_y(750, dire));
+				physics_apply_impulse(x, y, lengthdir_x(750, direction), lengthdir_y(750, direction));
 			}
 			
 			canShoot = false;

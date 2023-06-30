@@ -1,4 +1,4 @@
 // Set speed of throwables upon creation
-//speed = 4
-dire = noone
+//phy_speed = 4
+direction = noone
 target = noone
