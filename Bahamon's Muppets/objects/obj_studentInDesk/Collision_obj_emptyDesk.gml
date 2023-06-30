@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (!inDesk && buffer_time == 0) {
+if (!inDesk && !freeze) {
 inDesk = true
 speed = 0;
 bailSavesMade = bailSavesMade +1;
