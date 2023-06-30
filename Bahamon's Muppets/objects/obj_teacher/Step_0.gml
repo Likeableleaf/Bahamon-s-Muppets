@@ -37,13 +37,13 @@ if(!global.menuOpen){
 	if (!greenlight) {	
 		
 		//rotate sprite
-		image_angle = 0;
+		phy_rotation = 0;
 		
 		//check if mousePlayer exists
 		if (instance_exists(obj_studentInDesk)) {
 			
 			//check if mousePlayer is moving + not already in list
-			if ((obj_studentInDesk.speed != 0 || !obj_studentInDesk.inDesk) && (ds_list_find_index(target_list, obj_studentInDesk) == -1)) {
+			if ((obj_studentInDesk.phy_speed != 0 || !obj_studentInDesk.inDesk) && (ds_list_find_index(target_list, obj_studentInDesk) == -1)) {
 						
 				//add mousePlayer to targetList
 				ds_list_add(target_list, obj_studentInDesk.id);	
@@ -57,7 +57,7 @@ if(!global.menuOpen){
 			for (i = 0; i < instance_number(obj_Player); i++) {
 					
 				//check if target is in list
-				if ((instance_find(obj_Player, i).speed != 0 || !(instance_find(obj_Player, i).inDesk)) && (ds_list_find_index(target_list, instance_find(obj_Player, i)) == -1)) {
+				if ((instance_find(obj_Player, i).phy_speed != 0 || !(instance_find(obj_Player, i).inDesk)) && (ds_list_find_index(target_list, instance_find(obj_Player, i)) == -1)) {
 						
 					//add player to targetList
 					ds_list_add(target_list, instance_find(obj_Player, i));
@@ -72,7 +72,7 @@ if(!global.menuOpen){
 			for (i = 0; i < instance_number(obj_simpleStudent); i++) {
 					
 				//check if target is in list
-				if ((instance_find(obj_simpleStudent, i).speed != 0 || !(instance_find(obj_simpleStudent, i).inDesk)) && (ds_list_find_index(target_list, instance_find(obj_simpleStudent, i)) == -1)) {
+				if ((instance_find(obj_simpleStudent, i).phy_speed != 0 || !(instance_find(obj_simpleStudent, i).inDesk)) && (ds_list_find_index(target_list, instance_find(obj_simpleStudent, i)) == -1)) {
 						
 					//add player to targetList
 					ds_list_add(target_list, instance_find(obj_simpleStudent, i));
