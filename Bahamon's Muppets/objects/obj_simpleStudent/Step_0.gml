@@ -305,4 +305,7 @@ if (buffer_time == 0) {
 	freeze = false;
 }
 */
+if (buffer_time == 0) {
+	freeze = false;
+}
 

@@ -37,12 +37,15 @@ if instance_nearest(x,y,obj_simpleStudent).inDesk == true {
 			with (other) {
 				physics_apply_impulse(x, y, lengthdir_x(750, dire), lengthdir_y(750, dire));
 			}
-			if(canPlay) {
-			audio_play_sound(Empty_kick2, 10, false)
-			canPlay = false
+			
+			if (canPlay) {
+				audio_play_sound(Empty_kick2, 10, false)
+				canPlay = false
 			}
+			
 			instance_create_layer(x+30,y+30,"Instances", obj_emptyDesk)
 			owner.object_index.hitsMade = owner.object_index.hitsMade + 1;
+			
 			// destroy kick
 			instance_destroy(obj_kick)
 		}
