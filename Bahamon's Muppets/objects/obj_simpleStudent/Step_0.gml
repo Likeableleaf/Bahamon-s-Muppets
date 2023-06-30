@@ -150,10 +150,12 @@ if (inDesk) {
 					dire = point_direction(x, y, px, py) //+ irandom_range(-20,20)
 			
 					if (canKick) {
+						
 						// Set direction to the generated direction
-						instance_create_layer(x-lengthdir_x(32,direction),y-lengthdir_y(32,direction),"Instances",obj_kick);
+						instance_create_layer(x-lengthdir_x(32,phy_rotation),y-lengthdir_y(32,phy_rotation),"Instances",obj_kick);
 						instance_nearest(x, y, obj_kick).owner = id
-						instance_nearest(x, y, obj_kick).image_angle = phy_rotation //*/
+						instance_nearest(x, y, obj_kick).phy_rotation = phy_rotation //*/
+						
 						// Set speed
 						//speed = 4
 						physics_apply_impulse(x, y, lengthdir_x(500, dire), lengthdir_y(500, dire));
