@@ -27,6 +27,7 @@ if (inDesk) {
 				
 				//check if instance is inDesk
 				if (instance_nearest(x,y,obj_studentInDesk).inDesk) {
+					
 					//compare closest with object's distance and set to the closer of the 2
 					closest = min(closest, distance_to_object(instance_nearest(x,y,obj_studentInDesk)));
 				}

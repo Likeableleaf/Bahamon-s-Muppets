@@ -63,3 +63,18 @@ for (var i = temp; i < instance_number(obj_studentInDesk); ++i;)
     numbPlayers[i] = instance_find(obj_studentInDesk,i);
 	temp ++;
 }
+
+// Configure the fixture
+fix = physics_fixture_create();
+physics_fixture_set_box_shape(fix,  sprite_width/2, sprite_height/2);
+physics_fixture_set_density(fix, .5);
+physics_fixture_set_restitution(fix, 0.1);
+physics_fixture_set_linear_damping(fix, 0.9);
+physics_fixture_set_angular_damping(fix, 0.9);
+physics_fixture_set_friction(fix, 0.1);
+
+//Bind the fixture
+Crawl_fix = physics_fixture_bind(fix, id);
+			
+// Delete fixture
+physics_fixture_delete(fix)
