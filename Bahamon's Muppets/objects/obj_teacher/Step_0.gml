@@ -90,8 +90,14 @@ if(!global.menuOpen){
 			instance_create_layer(x, y, "Instances", obj_throwable);
 			instance_nearest(x, y, obj_throwable).target = ds_list_find_value(target_list, 0);
 			
+			
 			// Set direction of throwables
-			instance_nearest(x, y, obj_throwable).direction = point_direction(x, y, ds_list_find_value(target_list, 0).x, ds_list_find_value(target_list, 0).y);
+			//instance_nearest(x, y, obj_throwable).direction = point_direction(x, y, ds_list_find_value(target_list, 0).x, ds_list_find_value(target_list, 0).y);
+			instance_nearest(x, y, obj_throwable).dire = point_direction(x, y, ds_list_find_value(target_list, 0).x, ds_list_find_value(target_list, 0).y);
+			with (instance_nearest(x, y, obj_throwable)) {
+				physics_apply_impulse(x, y, lengthdir_x(750, dire), lengthdir_y(750, dire));
+			}
+			
 			canShoot = false;
 			
 			//move to next in list 
@@ -187,7 +193,7 @@ if (greenlight) {
 	ds_list_clear(target_list);
 	
 	//rotate sprite
-	image_angle=180;
+	phy_rotation=180;
 }
 
 
