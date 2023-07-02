@@ -47,7 +47,7 @@ if (gamepad_button_check_pressed(pad_num, gp_face1) && !freeze)
 		instance_nearest(x, y, obj_kick).owner = id
 		instance_nearest(x, y, obj_kick).phy_rotation = phy_rotation
 		//speed = -4
-		physics_apply_impulse(x, y, lengthdir_x(500, dire), lengthdir_y(500, dire));
+		physics_apply_impulse(x, y, lengthdir_x(500, dire+180), lengthdir_y(500, dire+180));
 	} else {
 		//speed = 4;
 		physics_apply_impulse(x, y, lengthdir_x(500, dire), lengthdir_y(500, dire));
