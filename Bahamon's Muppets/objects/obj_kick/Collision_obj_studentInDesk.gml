@@ -34,6 +34,7 @@ if instance_nearest(x,y,obj_studentInDesk).inDesk == true {
 			
 			// Boot player
 			instance_nearest(x,y,obj_studentInDesk).freeze = true;
+			instance_nearest(x,y,obj_studentInDesk).buffer_time = 5;
 			other.dire = point_direction(x, y, instance_nearest(x,y,obj_studentInDesk).x, instance_nearest(x,y,obj_studentInDesk).y);
 			with (other) {
 				physics_apply_impulse(x, y, lengthdir_x(750, dire), lengthdir_y(750, dire));

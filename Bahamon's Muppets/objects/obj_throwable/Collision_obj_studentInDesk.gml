@@ -27,6 +27,7 @@ if instance_nearest(x,y,obj_studentInDesk).inDesk == true {
 			
 			// Boot player
 			instance_nearest(x,y,obj_studentInDesk).freeze = true;
+			instance_nearest(x,y,obj_studentInDesk).buffer_time = 5;
 			other.dire = point_direction(x, y, instance_nearest(x,y,obj_studentInDesk).x, instance_nearest(x,y,obj_studentInDesk).y);
 			with (other) {
 				physics_apply_impulse(x, y, lengthdir_x(750, dire), lengthdir_y(750, dire));
@@ -36,9 +37,11 @@ if instance_nearest(x,y,obj_studentInDesk).inDesk == true {
 			audio_play_sound(Thowing_object_nohit, 10, false)
 			//obj_simpleStudent.x += 20
 		//obj_simpleStudent.y += 20
+		
 		//generate emptyDesk
 		instance_create_layer(x+10,y+10,"Instances", obj_emptyDesk)
-		// destroy kick
+		
+		// destroy throwable
 		instance_destroy()
 } else {
 	instance_destroy(instance_nearest(x,y,obj_studentInDesk))

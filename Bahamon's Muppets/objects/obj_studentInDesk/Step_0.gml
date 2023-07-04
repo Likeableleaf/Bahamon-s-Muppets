@@ -20,7 +20,7 @@ if(global.menuOpen == false) {
 	}else{
 	//speed = 4;
 	
-	physics_apply_impulse(x, y, lengthdir_x(500, dire), lengthdir_y(500, dire));
+	physics_apply_impulse(x, y, lengthdir_x(250, dire), lengthdir_y(250, dire));
 	}
 	
 }/* else {
@@ -40,9 +40,6 @@ if(global.menuOpen == false) {
 //swap between in desk and crawling
 if inDesk {
 	sprite_index = spr_studentInDeskV1;
-} else if (!inDesk && buffer_time == 0)  {
-	buffer_time = 1;
-	sprite_index = spr_studentCrawl;
 } else {
 	sprite_index = spr_studentCrawl;
 //instance_create_layer(x+30,y+10,"Instances", obj_emptyDesk)
@@ -50,14 +47,13 @@ if inDesk {
 
 
 //decrement the buffer over time
-if (buffer_time > 0) then buffer_time -= 1/room_speed;
+if (buffer_time > 0) then buffer_time -= 5/room_speed;
 
 // ALL CODE BELOW IS FOR CLAMPING BORDERS
 x = clamp(x, sprite_width/2, room_width-sprite_width/2)
 y = clamp(y, sprite_height/2+80, room_height-sprite_height)
 
 obj_mileStones.owner = id;
-
 
 if (buffer_time == 0) {
 	freeze = false;

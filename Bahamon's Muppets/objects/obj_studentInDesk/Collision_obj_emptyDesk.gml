@@ -2,7 +2,6 @@
 // You can write your code in this editor
 if (!inDesk && !freeze) {
 inDesk = true
-speed = 0;
 bailSavesMade = bailSavesMade +1;
 instance_destroy(instance_nearest(x,y,obj_emptyDesk));
 
